@@ -2,6 +2,9 @@ const path = require('node:path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/Skeleto',
+  images: { unoptimized: true },
   reactStrictMode: true,
   transpilePackages: ['skeleto', '@skeleto/web', '@skeleto/core'],
   webpack: (config) => {

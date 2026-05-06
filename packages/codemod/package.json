@@ -22,7 +22,7 @@
     "transforms"
   ],
   "scripts": {
-    "build": "tsup transforms/from-react-loading-skeleton.ts --format cjs --clean --out-dir dist --entry-names index",
+    "build": "tsup src/index.ts --format cjs --clean",
     "test": "vitest run"
   },
   "dependencies": {
