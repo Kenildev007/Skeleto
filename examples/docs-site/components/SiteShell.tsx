@@ -58,7 +58,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <Link href="/compare">Compare</Link>
             <Link href="/playground">Playground</Link>
             <a
-              href="https://github.com/your-org/skeleton-auto"
+              href="https://github.com/Kenildev007/Skeleto"
               className="text-ink-500 hover:text-ink-900"
             >
               GitHub

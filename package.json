@@ -1,5 +1,5 @@
 {
-  "name": "skeleton-auto-monorepo",
+  "name": "skeleto-monorepo",
   "private": true,
   "version": "0.0.0",
   "description": "Zero-config auto-skeleton loaders for React, React Native, and Expo",

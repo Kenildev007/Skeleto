@@ -1,1 +1,1 @@
-export * from '@skeleton-auto/web';
+export * from '@skeleto/web';

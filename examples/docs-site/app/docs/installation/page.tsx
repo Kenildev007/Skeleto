@@ -11,12 +11,12 @@ export default function Page() {
       </p>
 
       <h2 className="text-xl font-semibold mt-8">React (web)</h2>
-      <CodeBlock code={`npm install skeleton-auto`} language="bash" />
+      <CodeBlock code={`npm install skeleto`} language="bash" />
       <CodeBlock code={`// once, at the root of your app
-import 'skeleton-auto/styles.css';`} />
+import 'skeleto/styles.css';`} />
 
       <h2 className="text-xl font-semibold mt-8">Expo (managed workflow)</h2>
-      <CodeBlock code={`npx expo install skeleton-auto react-native-reanimated`} language="bash" />
+      <CodeBlock code={`npx expo install skeleto react-native-reanimated`} language="bash" />
       <p className="text-ink-700">
         No <code className="bg-ink-100 px-1 rounded">expo prebuild</code>. No
         <code className="bg-ink-100 px-1 rounded"> pod install</code>. Reanimated is bundled with
@@ -24,12 +24,12 @@ import 'skeleton-auto/styles.css';`} />
       </p>
 
       <h2 className="text-xl font-semibold mt-8">Bare React Native</h2>
-      <CodeBlock code={`npm install skeleton-auto react-native-reanimated
+      <CodeBlock code={`npm install skeleto react-native-reanimated
 cd ios && pod install`} language="bash" />
 
       <h2 className="text-xl font-semibold mt-8">Next.js</h2>
       <CodeBlock code={`// app/layout.tsx
-import 'skeleton-auto/styles.css';
+import 'skeleto/styles.css';
 
 export default function Layout({ children }) {
   return <html><body>{children}</body></html>;

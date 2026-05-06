@@ -1,4 +1,4 @@
-import { useStableLoading } from '@skeleton-auto/core';
+import { useStableLoading } from '@skeleto/core';
 
 export interface UseSkeletonOptions {
   loading: boolean;

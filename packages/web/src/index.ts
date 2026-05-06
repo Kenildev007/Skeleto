@@ -26,4 +26,4 @@ export type {
   SkeletonTheme,
   AnimationType,
   Direction,
-} from '@skeleton-auto/core';
+} from '@skeleto/core';

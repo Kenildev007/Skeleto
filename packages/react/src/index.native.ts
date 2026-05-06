@@ -1,1 +1,1 @@
-export * from '@skeleton-auto/native';
+export * from '@skeleto/native';

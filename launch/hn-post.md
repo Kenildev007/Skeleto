@@ -23,7 +23,7 @@ Alternates if the first feels off:
 
 ## URL
 
-`https://skeleton-auto.dev` (or wherever the docs site lives)
+`https://kenildev007.github.io/Skeleto` (or wherever the docs site lives)
 
 ---
 
@@ -64,9 +64,9 @@ The honest limitations:
 Genuinely happy to fix things — file an issue or reply here with the
 component shape that breaks for you and I'll add it to the test suite.
 
-Repo: https://github.com/your-org/skeleton-auto
-Docs: https://skeleton-auto.dev
-Playground (paste any JSX, see the skeleton): https://skeleton-auto.dev/playground
+Repo: https://github.com/Kenildev007/Skeleto
+Docs: https://kenildev007.github.io/Skeleto
+Playground (paste any JSX, see the skeleton): https://kenildev007.github.io/Skeleto/playground
 ```
 
 ---
@@ -94,7 +94,7 @@ Playground (paste any JSX, see the skeleton): https://skeleton-auto.dev/playgrou
 > RLS is a primitive — you write `<Skeleton width=… height=…/>` for every
 > placeholder. Skeleton-auto reads your DOM and generates those for you. The
 > /compare page on the docs site shows the same UserCard with both: 22 lines
-> of skeleton code with RLS, 6 lines with skeleton-auto. RLS is also web-only;
+> of skeleton code with RLS, 6 lines with Skeleto. RLS is also web-only;
 > on RN you'd reach for a different library and a third API.
 
 ### "Won't this re-measure on every render?"
@@ -137,7 +137,7 @@ Playground (paste any JSX, see the skeleton): https://skeleton-auto.dev/playgrou
 
 ## Things to do before submitting
 
-- [ ] Replace `your-org` and `skeleton-auto.dev` with the real URLs
+- [ ] Replace `skeleto.dev` with the real URLs
 - [ ] Cut a v1.0 git tag and publish to npm
 - [ ] Verify the docs site is live on Vercel and the /compare page loads
 - [ ] Verify the playground works (Babel-standalone runtime can be flaky)

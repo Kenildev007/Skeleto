@@ -7,19 +7,19 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: 'skeleton-auto/styles.css',
+        find: 'skeleto/styles.css',
         replacement: path.resolve(__dirname, '../../packages/web/src/styles.css'),
       },
       {
-        find: 'skeleton-auto',
+        find: 'skeleto',
         replacement: path.resolve(__dirname, '../../packages/web/src/index.ts'),
       },
       {
-        find: '@skeleton-auto/core',
+        find: '@skeleto/core',
         replacement: path.resolve(__dirname, '../../packages/core/src/index.ts'),
       },
       {
-        find: '@skeleton-auto/web',
+        find: '@skeleto/web',
         replacement: path.resolve(__dirname, '../../packages/web/src/index.ts'),
       },
     ],

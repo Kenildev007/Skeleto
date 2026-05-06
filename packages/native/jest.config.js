@@ -4,7 +4,7 @@ module.exports = {
   preset: 'ts-jest',
   testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/src/**/*.test.tsx'],
   moduleNameMapper: {
-    '^@skeleton-auto/core$': '<rootDir>/../core/src/index.ts',
+    '^@skeleto/core$': '<rootDir>/../core/src/index.ts',
     '^react-native$': '<rootDir>/test-mocks/react-native.ts',
     '^react-native-reanimated$': '<rootDir>/test-mocks/reanimated.ts',
   },

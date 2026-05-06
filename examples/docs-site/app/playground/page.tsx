@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 import * as Babel from '@babel/standalone';
 
 const PRESETS: Record<string, string> = {
@@ -56,7 +56,7 @@ export default function Page() {
       <h1 className="text-3xl font-semibold tracking-tight">Playground</h1>
       <p className="text-ink-700 leading-relaxed">
         Paste any JSX. Toggle loading. See the skeleton. This is the fastest way to verify
-        skeleton-auto works for <em>your</em> component before installing.
+        Skeleto works for <em>your</em> component before installing.
       </p>
 
       <div className="flex flex-wrap gap-2">

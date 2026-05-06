@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import 'skeleton-auto/styles.css';
+import 'skeleto/styles.css';
 import { App } from './App';
 import './index.css';
 

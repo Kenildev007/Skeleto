@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 import { CodeBlock } from '../../components/CodeBlock';
 import { UserCard } from '../../components/sample/UserCard';
 
@@ -28,8 +28,8 @@ function UserCard({ user, loading }) {
   return <RealUserCard user={user} />;
 }`;
 
-const SA_CODE = `// skeleton-auto — wrap and forget (3 lines)
-import { AutoSkeleton } from 'skeleton-auto';
+const SA_CODE = `// Skeleto — wrap and forget (3 lines)
+import { AutoSkeleton } from 'skeleto';
 
 function UserCard({ user, loading }) {
   return (
@@ -83,7 +83,7 @@ export default function ComparePage() {
         </Pane>
 
         <Pane
-          title="skeleton-auto"
+          title="skeleto"
           subtitle={`${SA_LOC} lines · auto-generated from real DOM`}
           tone="accent"
         >

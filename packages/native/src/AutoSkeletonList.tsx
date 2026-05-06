@@ -1,5 +1,5 @@
 import { View, type ViewStyle } from 'react-native';
-import { useSkeletonContext, resolveColors } from '@skeleton-auto/core';
+import { useSkeletonContext, resolveColors } from '@skeleto/core';
 import { Shimmer } from './Shimmer';
 import type { ReactElement } from 'react';
 

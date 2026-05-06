@@ -47,10 +47,10 @@ config.resolver.extraNodeModules = {
       .filter(Boolean),
   ),
   // Workspace packages — point directly at source so Metro picks .native.ts
-  '@skeleton-auto/core': path.resolve(workspaceRoot, 'packages/core/src'),
-  '@skeleton-auto/web': path.resolve(workspaceRoot, 'packages/web/src'),
-  '@skeleton-auto/native': path.resolve(workspaceRoot, 'packages/native/src'),
-  'skeleton-auto': path.resolve(workspaceRoot, 'packages/native/src'),
+  '@skeleto/core': path.resolve(workspaceRoot, 'packages/core/src'),
+  '@skeleto/web': path.resolve(workspaceRoot, 'packages/web/src'),
+  '@skeleto/native': path.resolve(workspaceRoot, 'packages/native/src'),
+  'skeleto': path.resolve(workspaceRoot, 'packages/native/src'),
 };
 
 module.exports = config;

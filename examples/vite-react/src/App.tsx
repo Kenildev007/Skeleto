@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 
 interface User {
   name: string;
@@ -16,7 +16,7 @@ const FAKE_USER: User = {
 const FEED = Array.from({ length: 4 }).map((_, i) => ({
   id: i,
   author: ['Grace Hopper', 'Alan Turing', 'Margaret Hamilton', 'Donald Knuth'][i]!,
-  text: 'Just shipped a new feature using skeleton-auto. The fact that it Just Works on web and native is wild.',
+  text: 'Just shipped a new feature using Skeleto. The fact that it Just Works on web and native is wild.',
   hasImage: i % 2 === 0,
 }));
 
@@ -25,7 +25,7 @@ export function App() {
 
   return (
     <div className="demo-page">
-      <h1>skeleton-auto demo</h1>
+      <h1>Skeleto demo</h1>
       <div className="controls">
         <button onClick={() => setLoading((l) => !l)}>
           loading: {String(loading)} (toggle)

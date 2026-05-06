@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 import { UserCard } from '../components/sample/UserCard';
 import { CodeBlock } from '../components/CodeBlock';
 
@@ -26,7 +26,7 @@ export default function Home() {
               The last skeleton loader you'll install.
             </h1>
             <p className="text-lg text-ink-500 mt-6 leading-relaxed">
-              <code className="text-ink-900 bg-ink-100 px-1.5 py-0.5 rounded">skeleton-auto</code> reads
+              <code className="text-ink-900 bg-ink-100 px-1.5 py-0.5 rounded">skeleto</code> reads
               your real UI and generates pixel-matching skeletons on the fly. One component. Web,
               iOS, Android, Expo. 60 FPS. Zero config.
             </p>
@@ -45,7 +45,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="mt-6">
-              <CodeBlock code={`npm install skeleton-auto`} language="bash" />
+              <CodeBlock code={`npm install skeleto`} language="bash" />
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function Home() {
         <h2 className="text-3xl font-semibold tracking-tight mb-2">Three lines.</h2>
         <p className="text-ink-500 mb-6">Wrap your component. Pass loading. That's the whole API.</p>
         <CodeBlock
-          code={`import { AutoSkeleton } from 'skeleton-auto';
+          code={`import { AutoSkeleton } from 'skeleto';
 
 <AutoSkeleton loading={isLoading}>
   <UserCard user={user} />

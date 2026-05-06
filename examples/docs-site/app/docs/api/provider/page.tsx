@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AutoSkeleton, SkeletonProvider } from 'skeleton-auto';
+import { AutoSkeleton, SkeletonProvider } from 'skeleto';
 import { CodeBlock } from '../../../../components/CodeBlock';
 import { UserCard } from '../../../../components/sample/UserCard';
 
@@ -24,7 +24,7 @@ export default function Page() {
       </p>
 
       <CodeBlock
-        code={`import { SkeletonProvider } from 'skeleton-auto';
+        code={`import { SkeletonProvider } from 'skeleto';
 
 <SkeletonProvider
   theme={{

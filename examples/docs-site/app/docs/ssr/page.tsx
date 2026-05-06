@@ -13,7 +13,7 @@ export default function Page() {
       <h2 className="text-xl font-semibold mt-8">Next.js App Router</h2>
       <CodeBlock
         code={`import { Suspense } from 'react';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 
 export default function Page() {
   return (

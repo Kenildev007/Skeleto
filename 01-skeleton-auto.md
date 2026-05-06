@@ -1,4 +1,4 @@
-# `skeleton-auto`
+# `skeleto`
 
 **Zero-config, auto-generated skeleton loaders for React, React Native, and Expo.**
 
@@ -37,7 +37,7 @@
 ## 2. Core API
 
 ```tsx
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 
 <AutoSkeleton loading={isLoading}>
   <UserCard user={user} />
@@ -280,13 +280,13 @@ No config plugin needed. Works out of the box on `npx create-expo-app`.
 
 ```bash
 # Expo
-npx expo install skeleton-auto react-native-reanimated
+npx expo install skeleto react-native-reanimated
 
 # Bare RN
-npm install skeleton-auto react-native-reanimated
+npm install skeleto react-native-reanimated
 
 # React web
-npm install skeleton-auto
+npm install skeleto
 ```
 
 No `expo prebuild` required for end-users. No `pod install` required (no custom native module).
@@ -342,7 +342,7 @@ config.resolver.unstable_conditionNames = ['react-native', 'require', 'import'];
 module.exports = config;
 ```
 
-Without these, `pnpm start --ios` fails with `Unable to resolve module @babel/runtime / invariant / fbjs / @skeleton-auto/native` from inside `.pnpm/`. With them, the iOS Metro bundle builds in ~18s with 1384 modules.
+Without these, `pnpm start --ios` fails with `Unable to resolve module @babel/runtime / invariant / fbjs / @skeleto/native` from inside `.pnpm/`. With them, the iOS Metro bundle builds in ~18s with 1384 modules.
 
 ---
 
@@ -493,8 +493,8 @@ benchmarks/
 
 ```bash
 pnpm -r test                                              # all unit tests
-pnpm --filter skeleton-auto-visual-tests test             # visual + a11y
-pnpm --filter skeleton-auto-benchmarks bench              # perf
+pnpm --filter skeleto-visual-tests test             # visual + a11y
+pnpm --filter skeleto-benchmarks bench              # perf
 ```
 
 **Real bugs caught by these tests:**
@@ -565,10 +565,10 @@ skeleton-auto/
 │   │       └── *.test.ts               # jest + RN mocks
 │   ├── react/             # Single npm-published entry — `skeleton-auto`
 │   │   └── src/
-│   │       ├── index.ts                # web entry (export * from @skeleton-auto/web)
-│   │       └── index.native.ts         # native entry (export * from @skeleton-auto/native)
-│   └── codemod/           # `skeleton-auto-migrate` CLI
-│       ├── bin/cli.js                  # `npx skeleton-auto-migrate react-loading-skeleton ...`
+│   │       ├── index.ts                # web entry (export * from @skeleto/web)
+│   │       └── index.native.ts         # native entry (export * from @skeleto/native)
+│   └── codemod/           # `skeleto-migrate` CLI
+│       ├── bin/cli.js                  # `npx skeleto-migrate react-loading-skeleton ...`
 │       ├── transforms/
 │       │   └── from-react-loading-skeleton.ts
 │       └── src/*.test.ts
@@ -590,7 +590,7 @@ Single package on npm: `skeleton-auto`. Platform resolution via `package.json` `
 
 ```json
 {
-  "name": "skeleton-auto",
+  "name": "skeleto",
   "main": "./dist/index.js",
   "react-native": "./dist/index.native.js",
   "exports": {
@@ -627,14 +627,14 @@ Single package on npm: `skeleton-auto`. Platform resolution via `package.json` `
 - ✅ Tests per package: vitest for `core` (11 tests) + `web` (10 tests) + `codemod` (3 tests); jest + RN mocks for `native` (4 tests). **28 passing.**
 - ✅ Performance benchmark suite (`benchmarks/`) — measures `measureTree` time across 10/50/100/250/500/1000 leaves
 - ✅ Visual regression + a11y suite: Playwright (chromium) hits 7 docs pages, validates skeleton-bone alignment, runs axe-core scans. **14 passing.** Found and fixed two real library bugs along the way (sa-internal element measurement, `visibility:hidden` filter).
-- ✅ Migration codemod (`skeleton-auto-migrate`) — jscodeshift transform from `react-loading-skeleton`: rewrites imports + collapses `loading ? <Skeleton/> : <Real/>` ternaries into `<AutoSkeleton>` wrappers
+- ✅ Migration codemod (`skeleto-migrate`) — jscodeshift transform from `react-loading-skeleton`: rewrites imports + collapses `loading ? <Skeleton/> : <Real/>` ternaries into `<AutoSkeleton>` wrappers
 - ✅ Expo example (`examples/expo-app/`) — Expo SDK 54 + RN 0.76 + Reanimated 3.16 + safe-area-context. `expo export --platform web` builds cleanly (465 modules, 1.0 MB bundle, real `skeleton-auto` code present)
 - ✅ Deploy configs: `vercel.json` for docs site, `eas.json` for Expo, GitHub Actions workflow with build + test + bundle-size gate + visual regression + Expo bundle smoke
 
 ### v0.4 — Post-v0.3 hardening ✅ shipped
 - ✅ `measureTree` optimized: index loops, direct `getAttribute`, manual childNodes walk, `className` indexOf. **1000 leaves: 43ms → 4ms (10× faster).** Scaling now sub-linear.
 - ✅ Side-by-side comparison demo: `/compare` page on docs site with source code, line counts, capability matrix
-- ✅ iOS Metro bundle verified (1384 modules, 11.6 MB, skeleton-auto + Reanimated 3 worklets present)
+- ✅ iOS Metro bundle verified (1384 modules, 11.6 MB, Skeleto + Reanimated 3 worklets present)
 - ✅ pnpm + Expo monorepo recipe codified (`.npmrc` hoist patterns + `metro.config.js` extraNodeModules + `unstable_enablePackageExports`)
 - ✅ HN launch post drafted (`launch/hn-post.md`) with title options + first-comment copy + 6 pre-written answers to the questions HN always asks
 - ⚠ Full iOS simulator end-to-end run blocked by Xcode 15.0 in dev env (RN 0.76 needs 15.4+); `expo prebuild` succeeds, `pod install` fails. Documented in `examples/expo-app/README.md`.
@@ -650,7 +650,7 @@ The three launch tasks originally planned:
 
 **Must-fix before `npm publish`:**
 - [ ] Create the actual GitHub repo; replace every `your-org/skeleton-auto` placeholder in README, docs site header, HN post draft
-- [ ] Pick a real docs domain; replace `skeleton-auto.dev` everywhere
+- [ ] Pick a real docs domain; replace `skeleto.dev` everywhere
 - [ ] Add `repository`, `author`, `homepage`, `bugs` fields to all publishable package.jsons (core, web, native, react, codemod) — currently only `name`, `version`, `license` are set
 - [ ] Add `LICENSE` file at repo root (currently only in package.json)
 - [ ] Decide version: bump to `1.0.0` (matches HN post claim) or keep `0.x` and change post to "v0.x, looking for early adopters"
@@ -720,7 +720,7 @@ A first-class docs site is part of v1.0 — not an afterthought. Built alongside
 /docs/migration            → From react-loading-skeleton, react-native-skeleton-placeholder
 /playground                → Full editor — paste any JSX, see auto skeleton (Babel-standalone in browser)
 /compare                   → Side-by-side vs react-loading-skeleton with line counts + capability matrix
-/showcase                  → Apps using skeleton-auto (post-launch)
+/showcase                  → Apps using Skeleto (post-launch)
 ```
 
 ### 13.3 Demo coverage (every feature ships with a runnable demo)
@@ -777,8 +777,8 @@ Full Sandpack editor pre-loaded with `skeleton-auto`. User pastes any JSX, toggl
 - New `/compare` page on docs site: side-by-side `react-loading-skeleton` vs `skeleton-auto` with same UserCard, same loading toggle, full source code, line counts, capability matrix. Lives at `examples/docs-site/app/compare/page.tsx`.
 
 **iOS sim verification**
-- pnpm + Expo + RN 0.76 monorepo configured: `.npmrc` hoist patterns for RN's transitive deps (`invariant`, `fbjs`, `event-target-shim`, etc.), Metro `extraNodeModules` map for workspace packages, `unstable_enablePackageExports` + `react-native` condition so `skeleton-auto` resolves to the native entry.
-- iOS Metro bundle: **1384 modules, 11.6 MB, success** — skeleton-auto + Reanimated 3 worklets present in the bundle output.
+- pnpm + Expo + RN 0.76 monorepo configured: `.npmrc` hoist patterns for RN's transitive deps (`invariant`, `fbjs`, `event-target-shim`, etc.), Metro `extraNodeModules` map for workspace packages, `unstable_enablePackageExports` + `react-native` condition so `skeleto` resolves to the native entry.
+- iOS Metro bundle: **1384 modules, 11.6 MB, success** — Skeleto + Reanimated 3 worklets present in the bundle output.
 - `expo prebuild --platform ios` generates a native iOS project cleanly. `pod install` blocked by **Xcode 15.0 in the dev env** (RN 0.76 needs Xcode 15.4+) — environment issue, not a library bug. Documented in `examples/expo-app/README.md`.
 
 ---
@@ -789,7 +789,7 @@ Full Sandpack editor pre-loaded with `skeleton-auto`. User pastes any JSX, toggl
 - Tests per package — 28 unit tests (vitest + jest) covering role inference, stable loading, DOM measurement, AutoSkeleton render lifecycle, AST tree annotation, codemod transforms
 - Visual regression + a11y suite — Playwright + axe-core, 14 tests; gates merges on no critical/serious WCAG 2.2 AA violations
 - Performance benchmark suite — measured `measureTree`: **1.4ms mean for 100 leaves** (target <4ms), super-linear past 250 leaves (improvement target for v0.4)
-- `skeleton-auto-migrate` CLI — codemod for `react-loading-skeleton` → `skeleton-auto`
+- `skeleto-migrate` CLI — codemod for `react-loading-skeleton` → `skeleton-auto`
 - Expo example app — SDK 54 + RN 0.76 + New Architecture, web export verified
 - CI: GitHub Actions with bundle-size gate (web < 6 KB gzip), visual regression, Expo smoke build
 - Vercel + EAS deploy configs

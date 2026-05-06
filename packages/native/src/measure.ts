@@ -1,6 +1,6 @@
 import { Children, cloneElement, createRef, isValidElement, type ReactElement, type ReactNode, type RefObject } from 'react';
 import { Image, Text, View, type ImageProps, type TextProps, type ViewProps } from 'react-native';
-import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@skeleton-auto/core';
+import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@skeleto/core';
 import { isFabricView, measureSync } from './measure.fabric';
 
 type MeasurableRef = RefObject<View | Text | Image | null>;

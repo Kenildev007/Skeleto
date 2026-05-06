@@ -1,4 +1,4 @@
-# skeleton-auto Expo example
+# Skeleto Expo example
 
 Expo SDK 54 + RN 0.76 + Reanimated 3.16 + new architecture, demoing every shipped
 `<AutoSkeleton>` feature on iOS, Android, and web.
@@ -26,8 +26,8 @@ pnpm android      # or: npx expo run:android
 
 | Path | Status |
 |---|---|
-| `expo export --platform web` builds cleanly | ✅ — 465 modules, 1.0 MB bundle, skeleton-auto code present |
-| iOS bundle generation via Metro (`http://localhost:8081/examples/expo-app/index.bundle?platform=ios`) | ✅ — 1384 modules, 11.6 MB, skeleton-auto + Reanimated 3 worklets in the output |
+| `expo export --platform web` builds cleanly | ✅ — 465 modules, 1.0 MB bundle, Skeleto code present |
+| iOS bundle generation via Metro (`http://localhost:8081/examples/expo-app/index.bundle?platform=ios`) | ✅ — 1384 modules, 11.6 MB, Skeleto + Reanimated 3 worklets in the output |
 | `expo prebuild --platform ios` (generates native project) | ✅ — `ios/` directory, podfile, xcworkspace all created |
 | `pod install` for the generated native project | ❌ blocked by **Xcode 15.0 in this dev env** — RN 0.76's `use_react_native!` macro requires Xcode 15.4+ |
 | App renders on iOS sim end-to-end | ⚠ blocked by the above. Update Xcode → 15.4+ and `pnpm ios` should complete the build. |
@@ -64,16 +64,16 @@ config.resolver.nodeModulesPaths = [
 ];
 
 // Honor the package.json `exports` field with the react-native condition,
-// so `skeleton-auto` resolves to its native entry instead of the web ESM build.
+// so `skeleto` resolves to its native entry instead of the web ESM build.
 config.resolver.unstable_enablePackageExports = true;
 config.resolver.unstable_conditionNames = ['react-native', 'require', 'import'];
 
 // Workspace packages — point Metro at source so it picks .native.ts files.
 config.resolver.extraNodeModules = {
-  '@skeleton-auto/core':   path.resolve(workspaceRoot, 'packages/core/src'),
-  '@skeleton-auto/web':    path.resolve(workspaceRoot, 'packages/web/src'),
-  '@skeleton-auto/native': path.resolve(workspaceRoot, 'packages/native/src'),
-  'skeleton-auto':         path.resolve(workspaceRoot, 'packages/native/src'),
+  '@skeleto/core':   path.resolve(workspaceRoot, 'packages/core/src'),
+  '@skeleto/web':    path.resolve(workspaceRoot, 'packages/web/src'),
+  '@skeleto/native': path.resolve(workspaceRoot, 'packages/native/src'),
+  'skeleto':         path.resolve(workspaceRoot, 'packages/native/src'),
 };
 ```
 
@@ -84,7 +84,7 @@ config.resolver.extraNodeModules = {
 | `Unable to resolve module ./index from /workspace-root/.` | Metro's serverRoot is the workspace root; default `index.bundle` URL resolves from there | Hit `examples/expo-app/index.bundle` (workspace-relative) instead, or override Metro's `serverRoot` |
 | `Unable to resolve module @babel/runtime from .pnpm/react-native-web/...` | RN's transitive deps live under `.pnpm/` and aren't reachable | Add `@babel/runtime` (and friends) to `.npmrc` `public-hoist-pattern` |
 | `Unable to resolve module invariant` | Same as above for `invariant`, `fbjs`, `event-target-shim`, etc. | Add each to the hoist patterns |
-| `Unable to resolve module @skeleton-auto/native from packages/react/dist/index.native.js` | Workspace packages aren't auto-resolvable across the symlink | Add to `extraNodeModules` map in `metro.config.js` |
+| `Unable to resolve module @skeleto/native from packages/react/dist/index.native.js` | Workspace packages aren't auto-resolvable across the symlink | Add to `extraNodeModules` map in `metro.config.js` |
 | Bundle resolves to web entry instead of native | Metro reads `module` field by default | Enable `unstable_enablePackageExports` + `unstable_conditionNames: ['react-native', ...]` |
 
 ## What the app shows

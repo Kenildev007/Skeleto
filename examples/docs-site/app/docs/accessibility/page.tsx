@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 import { CodeBlock } from '../../../components/CodeBlock';
 import { UserCard } from '../../../components/sample/UserCard';
 

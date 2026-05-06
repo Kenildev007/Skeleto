@@ -8,13 +8,13 @@ const transforms = {
 
 const args = process.argv.slice(2);
 if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
-  console.log(`Usage: skeleton-auto-migrate <from> <files...>
+  console.log(`Usage: skeleto-migrate <from> <files...>
 
   <from>      one of: ${Object.keys(transforms).join(', ')}
   <files...>  glob(s) or paths
 
 Examples:
-  skeleton-auto-migrate react-loading-skeleton 'src/**/*.{ts,tsx}'
+  skeleto-migrate react-loading-skeleton 'src/**/*.{ts,tsx}'
 `);
   process.exit(0);
 }

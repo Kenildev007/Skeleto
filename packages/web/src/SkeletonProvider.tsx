@@ -4,7 +4,7 @@ import {
   SkeletonContext,
   type AnimationType,
   type SkeletonTheme,
-} from '@skeleton-auto/core';
+} from '@skeleto/core';
 
 export interface SkeletonProviderProps {
   theme?: Partial<SkeletonTheme>;

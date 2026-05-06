@@ -1,16 +1,16 @@
 {
-  "name": "@skeleton-auto/native",
+  "name": "@skeleto/native",
   "version": "0.1.0",
-  "description": "React Native / Expo renderer for skeleton-auto",
+  "description": "React Native / Expo renderer for Skeleto",
   "author": "Kenil Gorasiya",
-  "homepage": "https://skeleton-auto.dev",
+  "homepage": "https://kenildev007.github.io/Skeleto",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/skeleton-auto.git",
+    "url": "git+https://github.com/Kenildev007/Skeleto.git",
     "directory": "packages/native"
   },
   "bugs": {
-    "url": "https://github.com/your-org/skeleton-auto/issues"
+    "url": "https://github.com/Kenildev007/Skeleto/issues"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -45,7 +45,7 @@
     }
   },
   "dependencies": {
-    "@skeleton-auto/core": "workspace:*"
+    "@skeleto/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

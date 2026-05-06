@@ -1,4 +1,4 @@
-import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@skeleton-auto/core';
+import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@skeleto/core';
 
 const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'META', 'LINK']);
 const TEXT_TAGS = new Set(['P', 'SPAN', 'A', 'LABEL', 'STRONG', 'EM', 'B', 'I', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'DT', 'DD', 'TIME', 'CODE', 'CITE', 'SMALL', 'SUB', 'SUP']);

@@ -1,5 +1,5 @@
 import { Window } from 'happy-dom';
-import { measureTree } from '@skeleton-auto/web';
+import { measureTree } from '@skeleto/web';
 
 const SIZES = [10, 50, 100, 250, 500, 1000];
 const ITERATIONS = 50;
@@ -55,7 +55,7 @@ async function main() {
   globalThis.document = window.document as unknown as typeof globalThis.document;
   globalThis.Node = window.Node as unknown as typeof globalThis.Node;
 
-  console.log('# skeleton-auto measurement benchmark');
+  console.log('# Skeleto measurement benchmark');
   console.log(`# ${ITERATIONS} iterations per size, after 5-iteration warmup`);
   console.log('');
   console.log('| Leaves | mean (ms) | p95 (ms) | min (ms) | max (ms) |');

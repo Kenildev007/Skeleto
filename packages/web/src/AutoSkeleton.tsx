@@ -14,7 +14,7 @@ import {
   usePrefersDark,
   type AutoSkeletonProps,
   type MeasuredNode,
-} from '@skeleton-auto/core';
+} from '@skeleto/core';
 import { measureTree } from './measure';
 
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;

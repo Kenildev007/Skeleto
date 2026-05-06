@@ -1,7 +1,7 @@
 import type { API, FileInfo, Options, JSCodeshift, Collection } from 'jscodeshift';
 
 /**
- * Migrates `react-loading-skeleton` -> `skeleton-auto`.
+ * Migrates `react-loading-skeleton` -> `skeleto`.
  *
  * - Rewrites the package import.
  * - Removes Skeleton placeholder JSX trees inside ternaries:
@@ -21,7 +21,7 @@ export default function transform(file: FileInfo, api: API, _options: Options): 
   root
     .find(j.ImportDeclaration, { source: { value: 'react-loading-skeleton' } })
     .forEach((path) => {
-      path.node.source = j.literal('skeleton-auto');
+      path.node.source = j.literal('skeleto');
       // Replace default import `Skeleton` with named `AutoSkeleton`
       const specs = path.node.specifiers ?? [];
       const newSpecs = specs.map((s) => {
@@ -39,7 +39,7 @@ export default function transform(file: FileInfo, api: API, _options: Options): 
     .find(j.ImportDeclaration, { source: { value: 'react-loading-skeleton/dist/skeleton.css' } })
     .forEach((path) => {
       j(path).replaceWith(
-        j.importDeclaration([], j.literal('skeleton-auto/styles.css')),
+        j.importDeclaration([], j.literal('skeleto/styles.css')),
       );
       changed = true;
     });

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 
 const FAKE_USER = {
   name: 'Ada Lovelace',
@@ -18,7 +18,7 @@ export default function App() {
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
         <StatusBar style="auto" />
         <ScrollView contentContainerStyle={styles.scroll}>
-          <Text style={styles.h1}>skeleton-auto</Text>
+          <Text style={styles.h1}>Skeleto</Text>
 
           <View style={styles.controls}>
             <Pressable

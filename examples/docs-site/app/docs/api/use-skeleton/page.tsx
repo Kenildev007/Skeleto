@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useSkeleton } from 'skeleton-auto';
+import { useSkeleton } from 'skeleto';
 import { CodeBlock } from '../../../../components/CodeBlock';
 
 export default function Page() {
@@ -15,7 +15,7 @@ export default function Page() {
       </p>
 
       <CodeBlock
-        code={`import { useSkeleton } from 'skeleton-auto';
+        code={`import { useSkeleton } from 'skeleto';
 
 function MyComponent({ loading }) {
   const { isSkeleton, bind } = useSkeleton({ loading, minDuration: 400 });

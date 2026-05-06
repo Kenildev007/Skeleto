@@ -14,7 +14,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 export function X() { return <Skeleton width={100} height={20} />; }`);
     expect(out).toMatch(/from ["']skeleton-auto["']/);
-    expect(out).toContain('skeleton-auto/styles.css');
+    expect(out).toContain('skeleto/styles.css');
     expect(out).toContain('AutoSkeleton');
     expect(out).not.toContain('react-loading-skeleton');
   });

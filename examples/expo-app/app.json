@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "skeleton-auto-demo",
-    "slug": "skeleton-auto-demo",
+    "name": "skeleto-demo",
+    "slug": "skeleto-demo",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anvasw.skeleton-auto-demo"
+      "bundleIdentifier": "com.anvasw.skeleto-demo"
     },
     "android": {
       "adaptiveIcon": {

@@ -1,6 +1,6 @@
 'use client';
 
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 import { CodeBlock } from '../../../components/CodeBlock';
 import { DemoFrame } from '../../../components/DemoFrame';
 import { UserCard } from '../../../components/sample/UserCard';
@@ -15,15 +15,15 @@ export default function Page() {
       </p>
 
       <h2 className="text-xl font-semibold mt-8">1. Install</h2>
-      <CodeBlock code={`npm install skeleton-auto`} language="bash" />
+      <CodeBlock code={`npm install skeleto`} language="bash" />
 
       <h2 className="text-xl font-semibold mt-8">2. Import the stylesheet (web only)</h2>
       <CodeBlock code={`// app/layout.tsx or _app.tsx
-import 'skeleton-auto/styles.css';`} />
+import 'skeleto/styles.css';`} />
 
       <h2 className="text-xl font-semibold mt-8">3. Wrap your component</h2>
       <CodeBlock
-        code={`import { AutoSkeleton } from 'skeleton-auto';
+        code={`import { AutoSkeleton } from 'skeleto';
 
 function UserProfile({ userId }) {
   const { data, isLoading } = useUser(userId);

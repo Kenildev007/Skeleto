@@ -5,7 +5,7 @@ export default function Page() {
     <article className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight">Migration guide</h1>
       <p className="text-ink-700 leading-relaxed">
-        From hand-authored skeleton libraries to <code className="bg-ink-100 px-1 rounded">skeleton-auto</code>.
+        From hand-authored skeleton libraries to <code className="bg-ink-100 px-1 rounded">skeleto</code>.
       </p>
 
       <h2 className="text-xl font-semibold mt-8">From react-loading-skeleton</h2>
@@ -29,8 +29,8 @@ function UserCard({ user, loading }) {
       />
       <p className="text-ink-700 mb-3">After:</p>
       <CodeBlock
-        code={`import { AutoSkeleton } from 'skeleton-auto';
-import 'skeleton-auto/styles.css';
+        code={`import { AutoSkeleton } from 'skeleto';
+import 'skeleto/styles.css';
 
 function UserCard({ user, loading }) {
   return (
@@ -70,7 +70,7 @@ function UserCard({ user, loading }) {
       />
       <p className="text-ink-700 mb-3">After:</p>
       <CodeBlock
-        code={`import { AutoSkeleton } from 'skeleton-auto';
+        code={`import { AutoSkeleton } from 'skeleto';
 
 function UserCard({ user, loading }) {
   return (
@@ -87,7 +87,7 @@ function UserCard({ user, loading }) {
           <thead className="bg-ink-100">
             <tr>
               <th className="text-left p-3">react-loading-skeleton</th>
-              <th className="text-left p-3">skeleton-auto</th>
+              <th className="text-left p-3">Skeleto</th>
             </tr>
           </thead>
           <tbody>

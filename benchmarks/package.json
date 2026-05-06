@@ -1,5 +1,5 @@
 {
-  "name": "skeleton-auto-benchmarks",
+  "name": "skeleto-benchmarks",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,8 @@
     "profile": "tsx src/measure-profile.ts"
   },
   "dependencies": {
-    "@skeleton-auto/core": "workspace:*",
-    "@skeleton-auto/web": "workspace:*",
+    "@skeleto/core": "workspace:*",
+    "@skeleto/web": "workspace:*",
     "happy-dom": "^14.0.0"
   },
   "devDependencies": {

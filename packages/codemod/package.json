@@ -1,19 +1,19 @@
 {
-  "name": "skeleton-auto-migrate",
+  "name": "skeleto-migrate",
   "version": "0.1.0",
-  "description": "Codemods to migrate from react-loading-skeleton and react-native-skeleton-placeholder to skeleton-auto",
+  "description": "Codemods to migrate from react-loading-skeleton and react-native-skeleton-placeholder to Skeleto",
   "author": "Kenil Gorasiya",
-  "homepage": "https://skeleton-auto.dev",
+  "homepage": "https://kenildev007.github.io/Skeleto",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/skeleton-auto.git",
+    "url": "git+https://github.com/Kenildev007/Skeleto.git",
     "directory": "packages/codemod"
   },
   "bugs": {
-    "url": "https://github.com/your-org/skeleton-auto/issues"
+    "url": "https://github.com/Kenildev007/Skeleto/issues"
   },
   "bin": {
-    "skeleton-auto-migrate": "./bin/cli.js"
+    "skeleto-migrate": "./bin/cli.js"
   },
   "main": "./dist/index.js",
   "files": [

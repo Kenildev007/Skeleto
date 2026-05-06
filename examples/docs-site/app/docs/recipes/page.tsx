@@ -1,6 +1,6 @@
 'use client';
 
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 import { CodeBlock } from '../../../components/CodeBlock';
 import { DemoFrame } from '../../../components/DemoFrame';
 import { UserCard } from '../../../components/sample/UserCard';

@@ -16,8 +16,8 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./*"],
-      "skeleton-auto": ["../../packages/web/src/index.ts"],
-      "@skeleton-auto/core": ["../../packages/core/src/index.ts"]
+      "skeleto": ["../../packages/web/src/index.ts"],
+      "@skeleto/core": ["../../packages/core/src/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

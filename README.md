@@ -1,9 +1,9 @@
-# skeleton-auto
+# Skeleto
 
 Zero-config, auto-generated skeleton loaders for React, React Native, and Expo.
 
 ```tsx
-import { AutoSkeleton } from 'skeleton-auto';
+import { AutoSkeleton } from 'skeleto';
 
 <AutoSkeleton loading={isLoading}>
   <UserCard user={user} />
@@ -16,13 +16,13 @@ That's it. No fixtures. No CLI. No build step.
 
 ```bash
 # React (web)
-npm install skeleton-auto
+npm install skeleto
 
 # Expo
-npx expo install skeleton-auto react-native-reanimated
+npx expo install skeleto react-native-reanimated
 
 # Bare React Native
-npm install skeleton-auto react-native-reanimated
+npm install skeleto react-native-reanimated
 ```
 
 ## Monorepo
@@ -34,7 +34,7 @@ npm install skeleton-auto react-native-reanimated
 | `packages/native` | RN/Expo measurement + Reanimated 3 |
 | `packages/react` | Unified entry (auto-resolves per platform) |
 
-See `01-skeleton-auto.md` for the full design doc.
+See `01-skeleton-auto.md` (design doc) for the full design doc.
 
 ## Local development
 

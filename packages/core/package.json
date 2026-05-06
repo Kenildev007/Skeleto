@@ -1,16 +1,16 @@
 {
-  "name": "@skeleton-auto/core",
+  "name": "@skeleto/core",
   "version": "0.1.0",
-  "description": "Platform-agnostic core for skeleton-auto",
+  "description": "Platform-agnostic core for Skeleto",
   "author": "Kenil Gorasiya",
-  "homepage": "https://skeleton-auto.dev",
+  "homepage": "https://kenildev007.github.io/Skeleto",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/skeleton-auto.git",
+    "url": "git+https://github.com/Kenildev007/Skeleto.git",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/your-org/skeleton-auto/issues"
+    "url": "https://github.com/Kenildev007/Skeleto/issues"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
