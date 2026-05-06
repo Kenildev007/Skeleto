@@ -254,15 +254,6 @@ importers:
 
   packages/react:
     dependencies:
-      '@kenildev007/skeleto-core':
-        specifier: workspace:*
-        version: link:../core
-      '@kenildev007/skeleto-native':
-        specifier: workspace:*
-        version: link:../native
-      '@kenildev007/skeleto-web':
-        specifier: workspace:*
-        version: link:../web
       react-dom:
         specifier: '>=17.0.0'
         version: 18.3.1(react@18.3.1)
@@ -273,6 +264,15 @@ importers:
         specifier: '>=3.0.0'
         version: 3.19.5(@babel/core@7.29.0)(react-native@0.74.7(@babel/core@7.29.0)(@babel/preset-env@7.29.2(@babel/core@7.29.0))(@types/react@18.3.28)(react@18.3.1))(react@18.3.1)
     devDependencies:
+      '@kenildev007/skeleto-core':
+        specifier: workspace:*
+        version: link:../core
+      '@kenildev007/skeleto-native':
+        specifier: workspace:*
+        version: link:../native
+      '@kenildev007/skeleto-web':
+        specifier: workspace:*
+        version: link:../web
       '@types/react':
         specifier: ^18.2.0
         version: 18.3.28

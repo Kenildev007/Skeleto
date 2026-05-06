@@ -52,11 +52,11 @@ function annotateElement(
   const props = (el.props ?? {}) as Record<string, unknown> & {
     children?: ReactNode;
     style?: unknown;
-    @kenildev007/skeletonIgnore?: boolean;
-    @kenildev007/skeletonRole?: SkeletonRole;
+    skeletonIgnore?: boolean;
+    skeletonRole?: SkeletonRole;
   };
 
-  if (props.@kenildev007/skeletonIgnore) {
+  if (props.skeletonIgnore) {
     return el;
   }
 
@@ -77,7 +77,7 @@ function annotateElement(
     collected.push({
       ref,
       signals,
-      explicitRole: props.@kenildev007/skeletonRole,
+      explicitRole: props.skeletonRole,
       ignore: false,
       borderRadius,
     });

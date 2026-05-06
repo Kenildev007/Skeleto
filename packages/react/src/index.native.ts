@@ -1,1 +1,1 @@
-export * from '@kenildev007/skeleto-native';
+export * from '../../native/src/index';

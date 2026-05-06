@@ -1,1 +1,1 @@
-export * from '@kenildev007/skeleto-web';
+export * from '../../web/src/index';
