@@ -1,0 +1,39 @@
+{
+  "name": "skeleton-auto-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Zero-config auto-skeleton loaders for React, React Native, and Expo",
+  "workspaces": [
+    "packages/*",
+    "examples/*",
+    "benchmarks"
+  ],
+  "scripts": {
+    "build": "pnpm -r --filter \"./packages/*\" build",
+    "dev": "pnpm -r --filter \"./packages/*\" --parallel dev",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "dev:docs": "pnpm --filter docs-site dev",
+    "dev:web": "pnpm --filter vite-react-example dev",
+    "clean": "pnpm -r exec rm -rf dist node_modules .turbo"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsup": "^8.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vitest": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "@testing-library/react": "^15.0.0",
+    "@testing-library/jest-dom": "^6.4.0",
+    "happy-dom": "^14.0.0",
+    "jsdom": "^24.0.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* skeleton-auto stylesheet */
+@import 'skeleton-auto/styles.css';
+
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --ink: #18181b;
+  --muted: #71717a;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+.prose-content {
+  min-width: 0;
+}
+
+.prose-content > * {
+  min-width: 0;
+}
+
+.code-block {
+  background: #0b1020;
+  color: #d6deeb;
+  padding: 16px 18px;
+  border-radius: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-overflow-scrolling: touch;
+}
+.code-block code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+}
+.code-block .tk-keyword { color: #c792ea; }
+.code-block .tk-string { color: #ecc48d; }
+.code-block .tk-tag { color: #7fdbca; }
+.code-block .tk-attr { color: #addb67; }
+.code-block .tk-comment { color: #637777; font-style: italic; }
+.code-block .tk-prop { color: #82aaff; }
+
+.demo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 720px) {
+  .demo-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@skeleton-auto/web",
+  "version": "0.1.0",
+  "description": "Web (DOM) renderer for skeleton-auto",
+  "author": "Kenil Gorasiya",
+  "homepage": "https://skeleton-auto.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/skeleton-auto.git",
+    "directory": "packages/web"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/skeleton-auto/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean && cp src/styles.css dist/styles.css",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "dependencies": {
+    "@skeleton-auto/core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsup": "^8.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "license": "MIT"
+}

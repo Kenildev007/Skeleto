@@ -1,0 +1,19 @@
+{
+  "name": "skeleton-auto-benchmarks",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "bench": "tsx src/measure-bench.ts",
+    "profile": "tsx src/measure-profile.ts"
+  },
+  "dependencies": {
+    "@skeleton-auto/core": "workspace:*",
+    "@skeleton-auto/web": "workspace:*",
+    "happy-dom": "^14.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}

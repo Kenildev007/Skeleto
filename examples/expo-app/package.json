@@ -1,0 +1,32 @@
+{
+  "name": "expo-app-example",
+  "private": true,
+  "version": "0.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "export:web": "expo export --platform web --output-dir dist"
+  },
+  "dependencies": {
+    "expo": "~54.0.0",
+    "expo-status-bar": "~2.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.76.0",
+    "react-native-reanimated": "~3.16.0",
+    "react-native-safe-area-context": "~4.12.0",
+    "react-native-web": "~0.19.0",
+    "skeleton-auto": "workspace:*",
+    "@expo/metro-runtime": "~4.0.0",
+    "@babel/runtime": "^7.24.0",
+    "fbjs": "^3.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@types/react": "~18.3.0",
+    "typescript": "^5.4.0"
+  }
+}

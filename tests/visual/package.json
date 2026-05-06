@@ -1,0 +1,13 @@
+{
+  "name": "skeleton-auto-visual-tests",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "test:update": "playwright test --update-snapshots"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@axe-core/playwright": "^4.9.0"
+  }
+}
