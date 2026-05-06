@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 
 interface User {
   name: string;

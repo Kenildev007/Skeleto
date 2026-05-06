@@ -1,6 +1,6 @@
 'use client';
 
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 import { CodeBlock } from '../../../components/CodeBlock';
 import { DemoFrame } from '../../../components/DemoFrame';
 import { UserCard } from '../../../components/sample/UserCard';
@@ -11,19 +11,19 @@ export default function Page() {
       <h1 className="text-3xl font-semibold tracking-tight">Getting started</h1>
       <p className="text-ink-700 leading-relaxed">
         Sixty seconds from <code className="bg-ink-100 px-1 rounded">npm install</code> to a
-        working skeleton.
+        working @kenildev007/skeleton.
       </p>
 
       <h2 className="text-xl font-semibold mt-8">1. Install</h2>
-      <CodeBlock code={`npm install skeleto`} language="bash" />
+      <CodeBlock code={`npm install @kenildev007/skeleto`} language="bash" />
 
       <h2 className="text-xl font-semibold mt-8">2. Import the stylesheet (web only)</h2>
       <CodeBlock code={`// app/layout.tsx or _app.tsx
-import 'skeleto/styles.css';`} />
+import '@kenildev007/skeleto/styles.css';`} />
 
       <h2 className="text-xl font-semibold mt-8">3. Wrap your component</h2>
       <CodeBlock
-        code={`import { AutoSkeleton } from 'skeleto';
+        code={`import { AutoSkeleton } from '@kenildev007/skeleto';
 
 function UserProfile({ userId }) {
   const { data, isLoading } = useUser(userId);
@@ -37,7 +37,7 @@ function UserProfile({ userId }) {
 
       <h2 className="text-xl font-semibold mt-8">That's it</h2>
       <p className="text-ink-700">
-        No fixtures. No CLI. No build step. Try it live below — the skeleton is generated from
+        No fixtures. No CLI. No build step. Try it live below — the @kenildev007/skeleton is generated from
         the same UserCard DOM that's used when loaded.
       </p>
 

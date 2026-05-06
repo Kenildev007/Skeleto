@@ -1,5 +1,5 @@
 {
-  "name": "skeleto-benchmarks",
+  "name": "@kenildev007/skeleto-benchmarks",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,8 @@
     "profile": "tsx src/measure-profile.ts"
   },
   "dependencies": {
-    "@skeleto/core": "workspace:*",
-    "@skeleto/web": "workspace:*",
+    "@kenildev007/skeleto-core": "workspace:*",
+    "@kenildev007/skeleto-web": "workspace:*",
     "happy-dom": "^14.0.0"
   },
   "devDependencies": {

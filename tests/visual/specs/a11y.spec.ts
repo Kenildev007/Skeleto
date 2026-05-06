@@ -5,7 +5,7 @@ const PAGES = [
   '/',
   '/docs/getting-started',
   '/docs/installation',
-  '/docs/api/auto-skeleton',
+  '/docs/api/auto-@kenildev007/skeleton',
   '/docs/api/list',
   '/docs/api/escape-hatches',
   '/docs/recipes',

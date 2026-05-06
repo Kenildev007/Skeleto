@@ -1,7 +1,7 @@
 {
-  "name": "skeleto-migrate",
+  "name": "@kenildev007/skeleto-migrate",
   "version": "0.1.0",
-  "description": "Codemods to migrate from react-loading-skeleton and react-native-skeleton-placeholder to Skeleto",
+  "description": "Codemods to migrate from react-loading-@kenildev007/skeleton and react-native-@kenildev007/skeleton-placeholder to Skeleto",
   "author": "Kenil Gorasiya",
   "homepage": "https://kenildev007.github.io/Skeleto",
   "repository": {

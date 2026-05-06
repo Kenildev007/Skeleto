@@ -1,7 +1,7 @@
 {
-  "name": "skeleto-monorepo",
+  "name": "@kenildev007/skeleto-monorepo",
   "version": "0.0.0",
-  "description": "Zero-config auto-skeleton loaders for React, React Native, and Expo",
+  "description": "Zero-config auto-@kenildev007/skeleton loaders for React, React Native, and Expo",
   "workspaces": [
     "packages/*",
     "examples/*",
@@ -34,6 +34,5 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
-  },
-  "private": true
+  }
 }

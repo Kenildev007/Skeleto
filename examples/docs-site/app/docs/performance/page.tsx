@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 import { CodeBlock } from '../../../components/CodeBlock';
 
 export default function Page() {
@@ -45,7 +45,7 @@ export default function Page() {
 
       <h2 className="text-xl font-semibold mt-8">Big list benchmark</h2>
       <p className="text-ink-700">
-        100 skeletons rendered, animated, scrolled. Watch the FPS — should hold at 60.
+        100 @kenildev007/skeletons rendered, animated, scrolled. Watch the FPS — should hold at 60.
       </p>
       <BigList />
 

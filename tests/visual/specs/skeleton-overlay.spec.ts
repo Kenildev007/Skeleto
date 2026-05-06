@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('skeleton overlay correctness', () => {
-  test('skeleton bones cover the visible UserCard leaves', async ({ page }) => {
+test.describe('@kenildev007/skeleton overlay correctness', () => {
+  test('@kenildev007/skeleton bones cover the visible UserCard leaves', async ({ page }) => {
     await page.goto('/docs/getting-started');
     // The DemoFrame here starts with loading=true. Wait for measurement.
     await page.waitForSelector('.sa-bone', { timeout: 5000 });
@@ -86,7 +86,7 @@ test.describe('snapshot: key demos', () => {
   });
 
   test('animation gallery — all 4 animation classes present', async ({ page }) => {
-    await page.goto('/docs/api/auto-skeleton');
+    await page.goto('/docs/api/auto-@kenildev007/skeleton');
     await page.waitForSelector('.sa-bone', { timeout: 5000 });
     for (const a of ['shimmer', 'pulse', 'wave', 'none']) {
       const found = await page.locator(`.sa-bone--${a}`).count();

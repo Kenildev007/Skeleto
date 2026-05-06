@@ -1,6 +1,6 @@
 'use client';
 
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 import { CodeBlock } from '../../../components/CodeBlock';
 import { DemoFrame } from '../../../components/DemoFrame';
 import { UserCard } from '../../../components/sample/UserCard';
@@ -13,7 +13,7 @@ export default function Page() {
       <h1 className="text-3xl font-semibold tracking-tight">Recipes</h1>
       <p className="text-ink-700 leading-relaxed">
         Real-world component patterns. Each shows the source component and the auto-generated
-        skeleton — same DOM, no duplication.
+        @kenildev007/skeleton — same DOM, no duplication.
       </p>
 
       <section id="profile">

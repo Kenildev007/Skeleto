@@ -1,6 +1,6 @@
 import { Children, cloneElement, createRef, isValidElement, type ReactElement, type ReactNode, type RefObject } from 'react';
 import { Image, Text, View, type ImageProps, type TextProps, type ViewProps } from 'react-native';
-import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@skeleto/core';
+import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@kenildev007/skeleto-core';
 import { isFabricView, measureSync } from './measure.fabric';
 
 type MeasurableRef = RefObject<View | Text | Image | null>;
@@ -52,11 +52,11 @@ function annotateElement(
   const props = (el.props ?? {}) as Record<string, unknown> & {
     children?: ReactNode;
     style?: unknown;
-    skeletonIgnore?: boolean;
-    skeletonRole?: SkeletonRole;
+    @kenildev007/skeletonIgnore?: boolean;
+    @kenildev007/skeletonRole?: SkeletonRole;
   };
 
-  if (props.skeletonIgnore) {
+  if (props.@kenildev007/skeletonIgnore) {
     return el;
   }
 
@@ -77,7 +77,7 @@ function annotateElement(
     collected.push({
       ref,
       signals,
-      explicitRole: props.skeletonRole,
+      explicitRole: props.@kenildev007/skeletonRole,
       ignore: false,
       borderRadius,
     });

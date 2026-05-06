@@ -1,4 +1,4 @@
-import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@skeleto/core';
+import { inferRole, type MeasuredNode, type RoleSignals, type SkeletonRole } from '@kenildev007/skeleto-core';
 
 const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'META', 'LINK']);
 const TEXT_TAGS = new Set(['P', 'SPAN', 'A', 'LABEL', 'STRONG', 'EM', 'B', 'I', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'DT', 'DD', 'TIME', 'CODE', 'CITE', 'SMALL', 'SUB', 'SUP']);
@@ -26,16 +26,16 @@ export function measureTree({ container, rootRect, maxDepth = 12 }: MeasureOptio
     const tag = el.tagName;
     if (SKIP_TAGS.has(tag)) return;
 
-    // Skip skeleton-internal elements (sr-only label, layer).
+    // Skip @kenildev007/skeleton-internal elements (sr-only label, layer).
     // String indexOf is faster than classList.contains for the common case.
     const cn = (el as HTMLElement).className;
     if (typeof cn === 'string' && (cn.indexOf('sa-sr-only') >= 0 || cn.indexOf('sa-layer') >= 0)) return;
 
     // Direct attribute access avoids the `dataset` proxy object allocation.
     let explicitRole: SkeletonRole | undefined;
-    if (el.hasAttribute('data-skeleton-ignore')) return;
-    if (el.hasAttribute('data-skeleton-role')) {
-      explicitRole = el.getAttribute('data-skeleton-role') as SkeletonRole;
+    if (el.hasAttribute('data-@kenildev007/skeleton-ignore')) return;
+    if (el.hasAttribute('data-@kenildev007/skeleton-role')) {
+      explicitRole = el.getAttribute('data-@kenildev007/skeleton-role') as SkeletonRole;
     }
 
     const children = el.children;

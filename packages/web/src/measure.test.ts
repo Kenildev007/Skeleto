@@ -37,9 +37,9 @@ describe('measureTree', () => {
     expect(nodes.length).toBeGreaterThanOrEqual(3);
   });
 
-  it('skips elements with data-skeleton-ignore', () => {
+  it('skips elements with data-@kenildev007/skeleton-ignore', () => {
     const root = makeRoot(`
-      <div data-skeleton-ignore>
+      <div data-@kenildev007/skeleton-ignore>
         <span>ignored</span>
       </div>
       <span>visible</span>
@@ -51,9 +51,9 @@ describe('measureTree', () => {
     expect(nodes.length).toBeLessThanOrEqual(1);
   });
 
-  it('honors data-skeleton-role override', () => {
+  it('honors data-@kenildev007/skeleton-role override', () => {
     const root = makeRoot(`
-      <div data-skeleton-role="image" style="width:100px;height:50px;"></div>
+      <div data-@kenildev007/skeleton-role="image" style="width:100px;height:50px;"></div>
     `);
     stubLayout(root);
     const nodes = measureTree({ container: root, rootRect: root.getBoundingClientRect() });

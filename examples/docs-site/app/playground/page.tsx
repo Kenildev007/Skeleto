@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 import * as Babel from '@babel/standalone';
 
 const PRESETS: Record<string, string> = {
@@ -55,7 +55,7 @@ export default function Page() {
     <article className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight">Playground</h1>
       <p className="text-ink-700 leading-relaxed">
-        Paste any JSX. Toggle loading. See the skeleton. This is the fastest way to verify
+        Paste any JSX. Toggle loading. See the @kenildev007/skeleton. This is the fastest way to verify
         Skeleto works for <em>your</em> component before installing.
       </p>
 
@@ -64,7 +64,7 @@ export default function Page() {
           onClick={() => setLoading((l) => !l)}
           className="px-3 py-1.5 rounded-md bg-accent-600 text-white text-sm font-medium"
         >
-          {loading ? 'Show real' : 'Show skeleton'}
+          {loading ? 'Show real' : 'Show @kenildev007/skeleton'}
         </button>
         {Object.keys(PRESETS).map((name) => (
           <button

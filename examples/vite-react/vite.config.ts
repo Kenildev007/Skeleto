@@ -7,19 +7,19 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: 'skeleto/styles.css',
+        find: '@kenildev007/skeleto/styles.css',
         replacement: path.resolve(__dirname, '../../packages/web/src/styles.css'),
       },
       {
-        find: 'skeleto',
+        find: '@kenildev007/skeleto',
         replacement: path.resolve(__dirname, '../../packages/web/src/index.ts'),
       },
       {
-        find: '@skeleto/core',
+        find: '@kenildev007/skeleto-core',
         replacement: path.resolve(__dirname, '../../packages/core/src/index.ts'),
       },
       {
-        find: '@skeleto/web',
+        find: '@kenildev007/skeleto-web',
         replacement: path.resolve(__dirname, '../../packages/web/src/index.ts'),
       },
     ],

@@ -1,5 +1,5 @@
 {
-  "name": "@skeleto/native",
+  "name": "@kenildev007/skeleto-native",
   "version": "0.1.0",
   "description": "React Native / Expo renderer for Skeleto",
   "author": "Kenil Gorasiya",
@@ -45,7 +45,7 @@
     }
   },
   "dependencies": {
-    "@skeleto/core": "workspace:*"
+    "@kenildev007/skeleto-core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

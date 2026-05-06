@@ -1,26 +1,26 @@
 import { describe, it, expect } from 'vitest';
 import { applyTransform } from 'jscodeshift/src/testUtils';
-import transform from '../transforms/from-react-loading-skeleton';
+import transform from '../transforms/from-react-loading-@kenildev007/skeleton';
 
 function run(source: string): string {
   const result = applyTransform(transform, {}, { source, path: 'test.tsx' }, { parser: 'tsx' });
   return result;
 }
 
-describe('from-react-loading-skeleton codemod', () => {
+describe('from-react-loading-@kenildev007/skeleton codemod', () => {
   it('rewrites the import package', () => {
-    const out = run(`import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+    const out = run(`import Skeleton from 'react-loading-@kenildev007/skeleton';
+import 'react-loading-@kenildev007/skeleton/dist/@kenildev007/skeleton.css';
 
 export function X() { return <Skeleton width={100} height={20} />; }`);
-    expect(out).toMatch(/from ["']skeleton-auto["']/);
-    expect(out).toContain('skeleto/styles.css');
+    expect(out).toMatch(/from ["']@kenildev007/skeleton-auto["']/);
+    expect(out).toContain('@kenildev007/skeleto/styles.css');
     expect(out).toContain('AutoSkeleton');
-    expect(out).not.toContain('react-loading-skeleton');
+    expect(out).not.toContain('react-loading-@kenildev007/skeleton');
   });
 
   it('wraps loading ternaries with AutoSkeleton', () => {
-    const out = run(`import Skeleton from 'react-loading-skeleton';
+    const out = run(`import Skeleton from 'react-loading-@kenildev007/skeleton';
 
 export function UserCard({ user, loading }) {
   return (

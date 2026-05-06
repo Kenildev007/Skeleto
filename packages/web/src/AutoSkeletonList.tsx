@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactElement } from 'react';
-import { useSkeletonContext, resolveColors, usePrefersDark } from '@skeleto/core';
+import { useSkeletonContext, resolveColors, usePrefersDark } from '@kenildev007/skeleto-core';
 
 export interface AutoSkeletonListProps {
   count: number;

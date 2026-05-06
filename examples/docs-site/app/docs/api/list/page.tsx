@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 import { CodeBlock } from '../../../../components/CodeBlock';
 
 export default function Page() {

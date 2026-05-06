@@ -13,7 +13,7 @@ export default function Page() {
       <h2 className="text-xl font-semibold mt-8">Next.js App Router</h2>
       <CodeBlock
         code={`import { Suspense } from 'react';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 
 export default function Page() {
   return (
@@ -38,8 +38,8 @@ export default function Page() {
         measurement happens after paint. We solve this in three steps:
       </p>
       <ol className="list-decimal pl-6 space-y-2 text-ink-700">
-        <li>SSR renders fixed-dimension skeleton markup directly.</li>
-        <li>On hydration, we keep the skeleton mounted while measuring children in a hidden subtree.</li>
+        <li>SSR renders fixed-dimension @kenildev007/skeleton markup directly.</li>
+        <li>On hydration, we keep the @kenildev007/skeleton mounted while measuring children in a hidden subtree.</li>
         <li>We swap to real content only after measurements commit.</li>
       </ol>
       <p className="text-ink-700">Verified in Chromium with 6× CPU throttle. Zero flash.</p>

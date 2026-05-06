@@ -3,7 +3,7 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const transforms = {
-  'react-loading-skeleton': path.join(__dirname, '..', 'transforms', 'from-react-loading-skeleton.ts'),
+  'react-loading-@kenildev007/skeleton': path.join(__dirname, '..', 'transforms', 'from-react-loading-@kenildev007/skeleton.ts'),
 };
 
 const args = process.argv.slice(2);
@@ -14,7 +14,7 @@ if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
   <files...>  glob(s) or paths
 
 Examples:
-  skeleto-migrate react-loading-skeleton 'src/**/*.{ts,tsx}'
+  @kenildev007/skeleto-migrate react-loading-skeleton 'src/**/*.{ts,tsx}'
 `);
   process.exit(0);
 }

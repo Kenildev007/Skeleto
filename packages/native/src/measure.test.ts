@@ -14,8 +14,8 @@ describe('annotateTree', () => {
     expect(collected.length).toBeGreaterThanOrEqual(3);
   });
 
-  it('skips subtrees marked with skeletonIgnore', () => {
-    const ignoredView = createElement(View, { skeletonIgnore: true } as object,
+  it('skips subtrees marked with @kenildev007/skeletonIgnore', () => {
+    const ignoredView = createElement(View, { @kenildev007/skeletonIgnore: true } as object,
       createElement(Text, null, 'should be skipped'),
     );
     const visibleText = createElement(Text, null, 'visible');
@@ -26,8 +26,8 @@ describe('annotateTree', () => {
     expect(collected.length).toBe(1);
   });
 
-  it('honors skeletonRole prop on a leaf', () => {
-    const tree = createElement(View, { skeletonRole: 'image' } as object);
+  it('honors @kenildev007/skeletonRole prop on a leaf', () => {
+    const tree = createElement(View, { @kenildev007/skeletonRole: 'image' } as object);
     const { collected } = annotateTree(tree);
     expect(collected[0]?.explicitRole).toBe('image');
   });

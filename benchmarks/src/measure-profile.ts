@@ -55,7 +55,7 @@ function timeOnly<T>(label: string, fn: () => T, iters = 20): { ms: number; resu
 
 async function main() {
   // Compare flat tree vs card tree at 1000 elements
-  const { measureTree } = await import('@skeleto/web');
+  const { measureTree } = await import('@kenildev007/skeleto-web');
 
   console.log('# Profile: flat tree vs nested card tree\n');
 

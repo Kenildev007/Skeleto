@@ -1,7 +1,7 @@
 import type { API, FileInfo, Options, JSCodeshift, Collection } from 'jscodeshift';
 
 /**
- * Migrates `react-loading-skeleton` -> `skeleto`.
+ * Migrates `react-loading-@kenildev007/skeleton` -> `@kenildev007/skeleto`.
  *
  * - Rewrites the package import.
  * - Removes Skeleton placeholder JSX trees inside ternaries:
@@ -10,7 +10,7 @@ import type { API, FileInfo, Options, JSCodeshift, Collection } from 'jscodeshif
  *     `<AutoSkeleton loading={loading}><RealContent /></AutoSkeleton>`
  *
  * It does NOT attempt to convert standalone <Skeleton> usages outside the
- * common `loading ? skeleton : content` pattern — those need a manual review.
+ * common `loading ? @kenildev007/skeleton : content` pattern — those need a manual review.
  */
 export default function transform(file: FileInfo, api: API, _options: Options): string | null {
   const j: JSCodeshift = api.jscodeshift;
@@ -19,9 +19,9 @@ export default function transform(file: FileInfo, api: API, _options: Options): 
 
   // 1. Rewrite imports
   root
-    .find(j.ImportDeclaration, { source: { value: 'react-loading-skeleton' } })
+    .find(j.ImportDeclaration, { source: { value: 'react-loading-@kenildev007/skeleton' } })
     .forEach((path) => {
-      path.node.source = j.literal('skeleto');
+      path.node.source = j.literal('@kenildev007/skeleto');
       // Replace default import `Skeleton` with named `AutoSkeleton`
       const specs = path.node.specifiers ?? [];
       const newSpecs = specs.map((s) => {
@@ -34,12 +34,12 @@ export default function transform(file: FileInfo, api: API, _options: Options): 
       changed = true;
     });
 
-  // Drop any `import 'react-loading-skeleton/dist/skeleton.css'`
+  // Drop any `import 'react-loading-@kenildev007/skeleton/dist/@kenildev007/skeleton.css'`
   root
-    .find(j.ImportDeclaration, { source: { value: 'react-loading-skeleton/dist/skeleton.css' } })
+    .find(j.ImportDeclaration, { source: { value: 'react-loading-@kenildev007/skeleton/dist/@kenildev007/skeleton.css' } })
     .forEach((path) => {
       j(path).replaceWith(
-        j.importDeclaration([], j.literal('skeleto/styles.css')),
+        j.importDeclaration([], j.literal('@kenildev007/skeleto/styles.css')),
       );
       changed = true;
     });

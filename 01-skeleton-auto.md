@@ -1,9 +1,9 @@
-# `skeleto`
+# `@kenildev007/skeleto`
 
-**Zero-config, auto-generated skeleton loaders for React, React Native, and Expo.**
+**Zero-config, auto-generated @kenildev007/skeleton loaders for React, React Native, and Expo.**
 
 > Stop maintaining a parallel component tree for your loading states.  
-> `skeleton-auto` reads your real UI and generates pixel-matching skeletons on the fly — smooth on web, smooth on mobile, smooth on Expo Go.
+> `@kenildev007/skeleton-auto` reads your real UI and generates pixel-matching @kenildev007/skeletons on the fly — smooth on web, smooth on mobile, smooth on Expo Go.
 
 ---
 
@@ -13,12 +13,12 @@
 
 | Library | Weekly DLs | Limitation |
 |---|---|---|
-| `react-loading-skeleton` | ~2M | Manual — you hand-author every skeleton |
-| `react-native-skeleton-placeholder` | ~350k | Manual, unmaintained, Old Architecture only |
-| `react-native-auto-skeleton` (pioner92) | ~3k | RN-only, no web, no React, Android border-radius broken |
+| `react-loading-@kenildev007/skeleton` | ~2M | Manual — you hand-author every @kenildev007/skeleton |
+| `react-native-@kenildev007/skeleton-placeholder` | ~350k | Manual, unmaintained, Old Architecture only |
+| `react-native-auto-@kenildev007/skeleton` (pioner92) | ~3k | RN-only, no web, no React, Android border-radius broken |
 | `boneyard-js` | <1k | Build-time Playwright step — heavy, CI-only, no RN |
-| `auto-skeleton-react` (ShanukJ) | <500 | DOM-only, no RN, SSR flash |
-| `react-skeletonify` | <2k | Web-only, no RN, no Expo |
+| `auto-@kenildev007/skeleton-react` (ShanukJ) | <500 | DOM-only, no RN, SSR flash |
+| `react-@kenildev007/skeletonify` | <2k | Web-only, no RN, no Expo |
 
 ### The gap
 
@@ -37,7 +37,7 @@
 ## 2. Core API
 
 ```tsx
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 
 <AutoSkeleton loading={isLoading}>
   <UserCard user={user} />
@@ -67,7 +67,7 @@ type AutoSkeletonProps = {
   // Behavior
   transition?: number;               // ms fade when loading → false, default 200
   staggerChildren?: number;          // ms between child reveals, default 0
-  minDuration?: number;              // ms minimum skeleton display, default 0
+  minDuration?: number;              // ms minimum @kenildev007/skeleton display, default 0
                                      // (prevents flicker on fast loads)
 
   // Advanced
@@ -87,15 +87,15 @@ type AutoSkeletonProps = {
 
 ```tsx
 // Force a specific role
-<Text skeletonRole="text">Name</Text>
-<Image skeletonRole="image" />
+<Text @kenildev007/skeletonRole="text">Name</Text>
+<Image @kenildev007/skeletonRole="image" />
 
 // Exclude entirely
-<View skeletonIgnore>
+<View @kenildev007/skeletonIgnore>
   <ErrorBanner />
 </View>
 
-// Custom skeleton for one subtree
+// Custom @kenildev007/skeleton for one subtree
 <AutoSkeleton.Custom render={() => <MyCustomBone />}>
   <ComplexChart />
 </AutoSkeleton.Custom>
@@ -129,13 +129,13 @@ ON loading = true:
   1. Render children INVISIBLY (opacity 0, pointerEvents none, aria-hidden)
   2. Measure every leaf node (w, h, x, y, borderRadius, role)
   3. Classify each leaf: text | image | circle | rect | icon | ignore
-  4. Render skeleton layer ABOVE children at identical coordinates
+  4. Render @kenildev007/skeleton layer ABOVE children at identical coordinates
   5. Animate on UI thread
 
 ON loading = false:
-  1. Fade skeleton layer (opacity 1 → 0) over `transition` ms
+  1. Fade @kenildev007/skeleton layer (opacity 1 → 0) over `transition` ms
   2. Fade children (opacity 0 → 1) simultaneously
-  3. Unmount skeleton after transition
+  3. Unmount @kenildev007/skeleton after transition
 ```
 
 ### 3.3 The measurement problem (the hard part)
@@ -188,7 +188,7 @@ interface RoleScore {
 - Has text content                           → +8 text
 - Height < 24pt                              → +2 text
 - Has backgroundImage / source               → +8 image
-- data-skeleton-role override                → +100 (wins)
+- data-@kenildev007/skeleton-role override                → +100 (wins)
 ```
 
 This is extensible — plugins can add signals without forking.
@@ -229,8 +229,8 @@ We measure **at runtime, once, on mount** — cost is ~1-3ms for typical screens
 
 | Bundle | Target | v0.1 | v0.2 |
 |---|---|---|---|
-| `skeleton-auto/web` (core + web, gzip) | **< 6 KB** | 4.7 KB | **5.3 KB** ✓ |
-| `skeleton-auto/native` (core + native, gzip, excl. Reanimated) | **< 8 KB** | 5.2 KB | **5.5 KB** ✓ |
+| `@kenildev007/skeleton-auto/web` (core + web, gzip) | **< 6 KB** | 4.7 KB | **5.3 KB** ✓ |
+| `@kenildev007/skeleton-auto/native` (core + native, gzip, excl. Reanimated) | **< 8 KB** | 5.2 KB | **5.5 KB** ✓ |
 | `core` only (gzip) | — | 1.4 KB | 1.4 KB |
 | `web` only (gzip) | — | 3.7 KB | 4.2 KB |
 | `native` only (gzip) | — | 4.2 KB | 4.5 KB |
@@ -280,20 +280,20 @@ No config plugin needed. Works out of the box on `npx create-expo-app`.
 
 ```bash
 # Expo
-npx expo install skeleto react-native-reanimated
+npx expo install @kenildev007/skeleto react-native-reanimated
 
 # Bare RN
-npm install skeleto react-native-reanimated
+npm install @kenildev007/skeleto react-native-reanimated
 
 # React web
-npm install skeleto
+npm install @kenildev007/skeleto
 ```
 
 No `expo prebuild` required for end-users. No `pod install` required (no custom native module).
 
 ### 5.4 pnpm + Expo monorepo recipe
 
-If you're consuming `skeleton-auto` from inside a pnpm workspace (or developing the library itself), Metro doesn't natively understand pnpm's symlink layout. Two pieces of config are required — copy from `examples/expo-app/`:
+If you're consuming `@kenildev007/skeleton-auto` from inside a pnpm workspace (or developing the library itself), Metro doesn't natively understand pnpm's symlink layout. Two pieces of config are required — copy from `examples/expo-app/`:
 
 **`.npmrc` at the workspace root** — hoist the deps Metro can't reach from `.pnpm/...`:
 
@@ -342,7 +342,7 @@ config.resolver.unstable_conditionNames = ['react-native', 'require', 'import'];
 module.exports = config;
 ```
 
-Without these, `pnpm start --ios` fails with `Unable to resolve module @babel/runtime / invariant / fbjs / @skeleto/native` from inside `.pnpm/`. With them, the iOS Metro bundle builds in ~18s with 1384 modules.
+Without these, `pnpm start --ios` fails with `Unable to resolve module @babel/runtime / invariant / fbjs / @kenildev007/skeleto-native` from inside `.pnpm/`. With them, the iOS Metro bundle builds in ~18s with 1384 modules.
 
 ---
 
@@ -366,7 +366,7 @@ function UserProfile({ userId }: { userId: string }) {
 }
 ```
 
-`minDuration={400}` prevents the "flicker" where a 50ms network response shows the skeleton for one frame. Always display skeletons for at least 400ms if they display at all — this is a UX principle backed by Nielsen Norman research.
+`minDuration={400}` prevents the "flicker" where a 50ms network response shows the @kenildev007/skeleton for one frame. Always display @kenildev007/skeletons for at least 400ms if they display at all — this is a UX principle backed by Nielsen Norman research.
 
 ### 6.2 `<AutoSkeleton.List>` — optimized for virtualized lists
 
@@ -419,12 +419,12 @@ return (
 
 ```tsx
 // Web
-<div data-skeleton-role="image" />
-<div data-skeleton-ignore />
+<div data-@kenildev007/skeleton-role="image" />
+<div data-@kenildev007/skeleton-ignore />
 
 // RN (via props)
-<View skeletonRole="image" />
-<View skeletonIgnore />
+<View @kenildev007/skeletonRole="image" />
+<View @kenildev007/skeletonIgnore />
 ```
 
 ---
@@ -451,13 +451,13 @@ return (
 </Suspense>
 ```
 
-`AutoSkeleton.SSR` renders fixed-dimension skeleton markup that won't cause hydration mismatches.
+`AutoSkeleton.SSR` renders fixed-dimension @kenildev007/skeleton markup that won't cause hydration mismatches.
 
 ### 8.2 The hydration flash problem (solved)
 
-Most "auto" skeleton libraries flash blank space for one frame during hydration because measurement happens after paint. We handle this with a **two-stage skeleton**:
+Most "auto" @kenildev007/skeleton libraries flash blank space for one frame during hydration because measurement happens after paint. We handle this with a **two-stage @kenildev007/skeleton**:
 
-1. **SSR + first-paint stage** — `<AutoSkeleton>` renders a single full-size fallback bone covering the whole container. The HTML always contains a skeleton, so the user never sees blank space.
+1. **SSR + first-paint stage** — `<AutoSkeleton>` renders a single full-size fallback bone covering the whole container. The HTML always contains a @kenildev007/skeleton, so the user never sees blank space.
 2. **Post-measure stage** — `useLayoutEffect` runs after hydration, measures the children, and swaps to per-leaf bones. The fallback bone fades out under the new bones smoothly via CSS opacity transition.
 3. **Real content stage** — when `loading=false`, bones fade out (with optional stagger) and children fade in.
 
@@ -493,12 +493,12 @@ benchmarks/
 
 ```bash
 pnpm -r test                                              # all unit tests
-pnpm --filter skeleto-visual-tests test             # visual + a11y
-pnpm --filter skeleto-benchmarks bench              # perf
+pnpm --filter @kenildev007/skeleto-visual-tests test             # visual + a11y
+pnpm --filter @kenildev007/skeleto-benchmarks bench              # perf
 ```
 
 **Real bugs caught by these tests:**
-- `measureTree` was including `.sa-sr-only` and `.sa-layer` (skeleton-internal) as 1×1 ghost bones — `data-skeleton-ignore` style internal skip added
+- `measureTree` was including `.sa-sr-only` and `.sa-layer` (@kenildev007/skeleton-internal) as 1×1 ghost bones — `data-@kenildev007/skeleton-ignore` style internal skip added
 - `measureElement` filtered out `visibility:hidden` elements, but children of a `visibility:hidden` parent inherit it — meant ALL leaves were filtered. Removed the visibility check (display:none alone suffices)
 - `ResizeObserver` only watched the root container, missing late layout shifts from font/image load — now also re-measures on `requestAnimationFrame`, on the window `load` event, and observes direct children
 
@@ -532,7 +532,7 @@ Future: add full iOS sim build via macOS runner + Xcode 15.4+, FlashList 500-ite
 Actual layout as of v0.4:
 
 ```
-skeleton-auto/
+@kenildev007/skeleton-auto/
 ├── packages/
 │   ├── core/              # Platform-agnostic types, role inference, theme
 │   │   └── src/
@@ -563,14 +563,14 @@ skeleton-auto/
 │   │       ├── useSkeleton.ts
 │   │       ├── Shimmer.tsx             # Reanimated 3 worklet + Animated fallback
 │   │       └── *.test.ts               # jest + RN mocks
-│   ├── react/             # Single npm-published entry — `skeleton-auto`
+│   ├── react/             # Single npm-published entry — `@kenildev007/skeleton-auto`
 │   │   └── src/
-│   │       ├── index.ts                # web entry (export * from @skeleto/web)
-│   │       └── index.native.ts         # native entry (export * from @skeleto/native)
-│   └── codemod/           # `skeleto-migrate` CLI
-│       ├── bin/cli.js                  # `npx skeleto-migrate react-loading-skeleton ...`
+│   │       ├── index.ts                # web entry (export * from @kenildev007/skeleto-web)
+│   │       └── index.native.ts         # native entry (export * from @kenildev007/skeleto-native)
+│   └── codemod/           # `@kenildev007/skeleto-migrate` CLI
+│       ├── bin/cli.js                  # `npx @kenildev007/skeleto-migrate react-loading-skeleton ...`
 │       ├── transforms/
-│       │   └── from-react-loading-skeleton.ts
+│       │   └── from-react-loading-@kenildev007/skeleton.ts
 │       └── src/*.test.ts
 ├── examples/
 │   ├── docs-site/         # Next.js 14 App Router — full docs + /compare + /playground
@@ -583,14 +583,14 @@ skeleton-auto/
 │   └── hn-post.md         # v1.0 launch post draft + pre-flight checklist
 ├── .github/workflows/ci.yml  # build + tests + visual + bundle-size gate + Expo bundle smoke
 ├── .npmrc                 # pnpm hoist patterns for Expo / RN transitive deps
-└── 01-skeleton-auto.md    # this design doc
+└── 01-@kenildev007/skeleton-auto.md    # this design doc
 ```
 
-Single package on npm: `skeleton-auto`. Platform resolution via `package.json` `exports` + React Native's own resolver picking `.native.ts`.
+Single package on npm: `@kenildev007/skeleton-auto`. Platform resolution via `package.json` `exports` + React Native's own resolver picking `.native.ts`.
 
 ```json
 {
-  "name": "skeleto",
+  "name": "@kenildev007/skeleto",
   "main": "./dist/index.js",
   "react-native": "./dist/index.native.js",
   "exports": {
@@ -626,9 +626,9 @@ Single package on npm: `skeleton-auto`. Platform resolution via `package.json` `
 ### v0.3 — Polish ✅ shipped
 - ✅ Tests per package: vitest for `core` (11 tests) + `web` (10 tests) + `codemod` (3 tests); jest + RN mocks for `native` (4 tests). **28 passing.**
 - ✅ Performance benchmark suite (`benchmarks/`) — measures `measureTree` time across 10/50/100/250/500/1000 leaves
-- ✅ Visual regression + a11y suite: Playwright (chromium) hits 7 docs pages, validates skeleton-bone alignment, runs axe-core scans. **14 passing.** Found and fixed two real library bugs along the way (sa-internal element measurement, `visibility:hidden` filter).
-- ✅ Migration codemod (`skeleto-migrate`) — jscodeshift transform from `react-loading-skeleton`: rewrites imports + collapses `loading ? <Skeleton/> : <Real/>` ternaries into `<AutoSkeleton>` wrappers
-- ✅ Expo example (`examples/expo-app/`) — Expo SDK 54 + RN 0.76 + Reanimated 3.16 + safe-area-context. `expo export --platform web` builds cleanly (465 modules, 1.0 MB bundle, real `skeleton-auto` code present)
+- ✅ Visual regression + a11y suite: Playwright (chromium) hits 7 docs pages, validates @kenildev007/skeleton-bone alignment, runs axe-core scans. **14 passing.** Found and fixed two real library bugs along the way (sa-internal element measurement, `visibility:hidden` filter).
+- ✅ Migration codemod (`@kenildev007/skeleto-migrate`) — jscodeshift transform from `react-loading-@kenildev007/skeleton`: rewrites imports + collapses `loading ? <Skeleton/> : <Real/>` ternaries into `<AutoSkeleton>` wrappers
+- ✅ Expo example (`examples/expo-app/`) — Expo SDK 54 + RN 0.76 + Reanimated 3.16 + safe-area-context. `expo export --platform web` builds cleanly (465 modules, 1.0 MB bundle, real `@kenildev007/skeleton-auto` code present)
 - ✅ Deploy configs: `vercel.json` for docs site, `eas.json` for Expo, GitHub Actions workflow with build + test + bundle-size gate + visual regression + Expo bundle smoke
 
 ### v0.4 — Post-v0.3 hardening ✅ shipped
@@ -642,15 +642,15 @@ Single package on npm: `skeleton-auto`. Platform resolution via `package.json` `
 ### v1.0 — Launch (NOT yet shipped)
 
 The three launch tasks originally planned:
-- [x] Side-by-side comparison demo with `react-loading-skeleton` — done in v0.4 (`/compare`)
+- [x] Side-by-side comparison demo with `react-loading-@kenildev007/skeleton` — done in v0.4 (`/compare`)
 - [ ] HN post: drafted in `launch/hn-post.md`, not yet submitted
 - [ ] Expo DevRel partnership for blog placement — outreach task
 
 **But the code isn't publish-ready either.** Full pre-publish checklist:
 
 **Must-fix before `npm publish`:**
-- [ ] Create the actual GitHub repo; replace every `your-org/skeleton-auto` placeholder in README, docs site header, HN post draft
-- [ ] Pick a real docs domain; replace `skeleto.dev` everywhere
+- [ ] Create the actual GitHub repo; replace every `your-org/@kenildev007/skeleton-auto` placeholder in README, docs site header, HN post draft
+- [ ] Pick a real docs domain; replace `@kenildev007/skeleto.dev` everywhere
 - [ ] Add `repository`, `author`, `homepage`, `bugs` fields to all publishable package.jsons (core, web, native, react, codemod) — currently only `name`, `version`, `license` are set
 - [ ] Add `LICENSE` file at repo root (currently only in package.json)
 - [ ] Decide version: bump to `1.0.0` (matches HN post claim) or keep `0.x` and change post to "v0.x, looking for early adopters"
@@ -672,7 +672,7 @@ The three launch tasks originally planned:
 - [ ] 4 hours of keyboard time post-submission to answer the first wave of comments
 - [ ] GitHub release notes drafted, `git tag v1.0.0` ready to push
 
-See `launch/hn-post.md` for the full post draft, alternate titles, and the pre-written answers to the six questions HN always asks (vs `react-loading-skeleton`, re-measure cost, RSC/streaming, Skia, React Compiler, role inference edges).
+See `launch/hn-post.md` for the full post draft, alternate titles, and the pre-written answers to the six questions HN always asks (vs `react-loading-@kenildev007/skeleton`, re-measure cost, RSC/streaming, Skia, React Compiler, role inference edges).
 
 ---
 
@@ -683,7 +683,7 @@ See `launch/hn-post.md` for the full post draft, alternate titles, and the pre-w
 | React Compiler makes re-measure brittle | Test suite runs against RC builds; escape hatch via `useSkeleton` hook |
 | Reanimated 4 breaks worklet API | Peer dep range, versioned renderer |
 | Expo drops Reanimated from Go | Pure-JS animated fallback ships as third path |
-| Someone forks `react-native-auto-skeleton` and adds web | We ship first with better perf + SSR + a11y |
+| Someone forks `react-native-auto-@kenildev007/skeleton` and adds web | We ship first with better perf + SSR + a11y |
 
 ---
 
@@ -705,21 +705,21 @@ A first-class docs site is part of v1.0 — not an afterthought. Built alongside
 
 ```
 /                          → Hero, live "before/after" toggle, install snippet
-/docs/getting-started      → 60-second install + first skeleton
+/docs/getting-started      → 60-second install + first @kenildev007/skeleton
 /docs/installation         → Web / RN / Expo step-by-step
 /docs/concepts             → How auto-measurement works
-/docs/api/auto-skeleton    → <AutoSkeleton> full prop reference + live playground
+/docs/api/auto-@kenildev007/skeleton    → <AutoSkeleton> full prop reference + live playground
 /docs/api/list             → <AutoSkeleton.List> demo with FlashList
-/docs/api/use-skeleton     → useSkeleton() hook demo
+/docs/api/use-@kenildev007/skeleton     → useSkeleton() hook demo
 /docs/api/provider         → <SkeletonProvider> theming
-/docs/api/escape-hatches   → skeletonRole, skeletonIgnore, Custom
+/docs/api/escape-hatches   → @kenildev007/skeletonRole, @kenildev007/skeletonIgnore, Custom
 /docs/recipes              → Real-world patterns (cards, lists, forms, profiles, feeds)
 /docs/ssr                  → Next.js + hydration demo
 /docs/accessibility        → a11y guarantees + reduced motion demo
 /docs/performance          → Benchmarks page with live frame counter
-/docs/migration            → From react-loading-skeleton, react-native-skeleton-placeholder
-/playground                → Full editor — paste any JSX, see auto skeleton (Babel-standalone in browser)
-/compare                   → Side-by-side vs react-loading-skeleton with line counts + capability matrix
+/docs/migration            → From react-loading-@kenildev007/skeleton, react-native-@kenildev007/skeleton-placeholder
+/playground                → Full editor — paste any JSX, see auto @kenildev007/skeleton (Babel-standalone in browser)
+/compare                   → Side-by-side vs react-loading-@kenildev007/skeleton with line counts + capability matrix
 /showcase                  → Apps using Skeleto (post-launch)
 ```
 
@@ -728,34 +728,34 @@ A first-class docs site is part of v1.0 — not an afterthought. Built alongside
 | Feature | Demo type | Lives at |
 |---|---|---|
 | Basic loading | Sandpack toggle | `/` hero + `/docs/getting-started` |
-| All animation types (`shimmer`, `pulse`, `wave`, `none`) | Side-by-side live | `/docs/api/auto-skeleton#animation` |
+| All animation types (`shimmer`, `pulse`, `wave`, `none`) | Side-by-side live | `/docs/api/auto-@kenildev007/skeleton#animation` |
 | Custom colors / dark mode | Theme switcher | `/docs/api/provider` |
 | `borderRadius='inherit'` | Cards with varied radii | `/docs/recipes#cards` |
-| `staggerChildren` | List reveal animation | `/docs/api/auto-skeleton#stagger` |
-| `minDuration` | Network throttle simulator | `/docs/api/auto-skeleton#min-duration` |
-| `transition` fade | Slider control | `/docs/api/auto-skeleton#transition` |
+| `staggerChildren` | List reveal animation | `/docs/api/auto-@kenildev007/skeleton#stagger` |
+| `minDuration` | Network throttle simulator | `/docs/api/auto-@kenildev007/skeleton#min-duration` |
+| `transition` fade | Slider control | `/docs/api/auto-@kenildev007/skeleton#transition` |
 | `<AutoSkeleton.List>` | 1000-row FlashList | `/docs/api/list` |
-| `useSkeleton()` | Custom orchestration | `/docs/api/use-skeleton` |
-| `skeletonRole` override | Force shape demo | `/docs/api/escape-hatches#role` |
-| `skeletonIgnore` | Exclude subtree | `/docs/api/escape-hatches#ignore` |
+| `useSkeleton()` | Custom orchestration | `/docs/api/use-@kenildev007/skeleton` |
+| `@kenildev007/skeletonRole` override | Force shape demo | `/docs/api/escape-hatches#role` |
+| `@kenildev007/skeletonIgnore` | Exclude subtree | `/docs/api/escape-hatches#ignore` |
 | `<AutoSkeleton.Custom>` | Chart placeholder | `/docs/api/escape-hatches#custom` |
 | SSR / hydration | Next.js example | `/docs/ssr` |
 | Reduced motion | Toggle in OS, see live change | `/docs/accessibility` |
 | RN / Expo | QR code → Snack on device | `/docs/installation#expo` |
-| Profile card recipe | Full code + skeleton | `/docs/recipes#profile` |
+| Profile card recipe | Full code + @kenildev007/skeleton | `/docs/recipes#profile` |
 | Feed recipe | Twitter-style feed | `/docs/recipes#feed` |
 | Form recipe | Login form | `/docs/recipes#form` |
 
 ### 13.4 Hero (above the fold)
 
-- Animated split-screen: real UserCard fading in/out next to its auto-skeleton
-- Single-line install: `npm i skeleton-auto`
+- Animated split-screen: real UserCard fading in/out next to its auto-@kenildev007/skeleton
+- Single-line install: `npm i @kenildev007/skeleton-auto`
 - Three logos: React, React Native, Expo
 - Live frame counter ticking at 60 FPS to prove perf
 
 ### 13.5 Playground
 
-Full Sandpack editor pre-loaded with `skeleton-auto`. User pastes any JSX, toggles `loading`, sees the skeleton. URL is shareable. This is the single best onboarding tool — devs can verify "does it work for *my* component?" in 30 seconds without installing anything.
+Full Sandpack editor pre-loaded with `@kenildev007/skeleton-auto`. User pastes any JSX, toggles `loading`, sees the @kenildev007/skeleton. URL is shareable. This is the single best onboarding tool — devs can verify "does it work for *my* component?" in 30 seconds without installing anything.
 
 ### 13.6 Build/deploy
 
@@ -774,10 +774,10 @@ Full Sandpack editor pre-loaded with `skeleton-auto`. User pastes any JSX, toggl
 - **1000 leaves: 43ms → 4ms (10× faster).** 100 leaves: 1.4ms → 0.6ms (2.3× faster). Scaling now sub-linear (1000 = 6.9× of 100, vs ideal 10×).
 
 **Comparison demo**
-- New `/compare` page on docs site: side-by-side `react-loading-skeleton` vs `skeleton-auto` with same UserCard, same loading toggle, full source code, line counts, capability matrix. Lives at `examples/docs-site/app/compare/page.tsx`.
+- New `/compare` page on docs site: side-by-side `react-loading-@kenildev007/skeleton` vs `@kenildev007/skeleton-auto` with same UserCard, same loading toggle, full source code, line counts, capability matrix. Lives at `examples/docs-site/app/compare/page.tsx`.
 
 **iOS sim verification**
-- pnpm + Expo + RN 0.76 monorepo configured: `.npmrc` hoist patterns for RN's transitive deps (`invariant`, `fbjs`, `event-target-shim`, etc.), Metro `extraNodeModules` map for workspace packages, `unstable_enablePackageExports` + `react-native` condition so `skeleto` resolves to the native entry.
+- pnpm + Expo + RN 0.76 monorepo configured: `.npmrc` hoist patterns for RN's transitive deps (`invariant`, `fbjs`, `event-target-shim`, etc.), Metro `extraNodeModules` map for workspace packages, `unstable_enablePackageExports` + `react-native` condition so `@kenildev007/skeleto` resolves to the native entry.
 - iOS Metro bundle: **1384 modules, 11.6 MB, success** — Skeleto + Reanimated 3 worklets present in the bundle output.
 - `expo prebuild --platform ios` generates a native iOS project cleanly. `pod install` blocked by **Xcode 15.0 in the dev env** (RN 0.76 needs Xcode 15.4+) — environment issue, not a library bug. Documented in `examples/expo-app/README.md`.
 
@@ -789,13 +789,13 @@ Full Sandpack editor pre-loaded with `skeleton-auto`. User pastes any JSX, toggl
 - Tests per package — 28 unit tests (vitest + jest) covering role inference, stable loading, DOM measurement, AutoSkeleton render lifecycle, AST tree annotation, codemod transforms
 - Visual regression + a11y suite — Playwright + axe-core, 14 tests; gates merges on no critical/serious WCAG 2.2 AA violations
 - Performance benchmark suite — measured `measureTree`: **1.4ms mean for 100 leaves** (target <4ms), super-linear past 250 leaves (improvement target for v0.4)
-- `skeleto-migrate` CLI — codemod for `react-loading-skeleton` → `skeleton-auto`
+- `@kenildev007/skeleto-migrate` CLI — codemod for `react-loading-@kenildev007/skeleton` → `@kenildev007/skeleton-auto`
 - Expo example app — SDK 54 + RN 0.76 + New Architecture, web export verified
 - CI: GitHub Actions with bundle-size gate (web < 6 KB gzip), visual regression, Expo smoke build
 - Vercel + EAS deploy configs
 
 **Bugs fixed (caught by tests)**
-- `measureTree` was picking up `.sa-sr-only` and `.sa-layer` (skeleton-internal) as leaves, producing 1×1 ghost bones — now skipped explicitly
+- `measureTree` was picking up `.sa-sr-only` and `.sa-layer` (@kenildev007/skeleton-internal) as leaves, producing 1×1 ghost bones — now skipped explicitly
 - `measureElement` filtered out `visibility:hidden` elements, but children of a `visibility:hidden` parent inherit that — meaning ALL child leaves were filtered. Removed the visibility check (display:none alone suffices)
 - `ResizeObserver` only watched the root container, missing late layout shifts from font/image load — now also re-measures on `requestAnimationFrame` and on the window `load` event, and observes child elements
 
@@ -843,4 +843,4 @@ Full Sandpack editor pre-loaded with `skeleton-auto`. User pastes any JSX, toggl
 
 ## 17. One-liner pitch
 
-> **`skeleton-auto`: the last skeleton library you'll install. One component. Web, iOS, Android, Expo. 60 FPS. Zero config.**
+> **`@kenildev007/skeleton-auto`: the last @kenildev007/skeleton library you'll install. One component. Web, iOS, Android, Expo. 60 FPS. Zero config.**

@@ -11,7 +11,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@skeleto/core': path.resolve(__dirname, '../core/src/index.ts'),
+      '@kenildev007/skeleto-core': path.resolve(__dirname, '../core/src/index.ts'),
     },
   },
 });

@@ -1,5 +1,5 @@
 {
-  "name": "@skeleto/web",
+  "name": "@kenildev007/skeleto-web",
   "version": "0.1.0",
   "description": "Web (DOM) renderer for Skeleto",
   "author": "Kenil Gorasiya",
@@ -37,7 +37,7 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@skeleto/core": "workspace:*"
+    "@kenildev007/skeleto-core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

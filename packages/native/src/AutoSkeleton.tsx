@@ -6,7 +6,7 @@ import {
   useStableLoading,
   type AutoSkeletonProps,
   type MeasuredNode,
-} from '@skeleto/core';
+} from '@kenildev007/skeleto-core';
 import { annotateTree, measureCollected } from './measure';
 import { Shimmer } from './Shimmer';
 

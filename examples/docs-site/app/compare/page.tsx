@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 import { CodeBlock } from '../../components/CodeBlock';
 import { UserCard } from '../../components/sample/UserCard';
 
-const RLS_CODE = `// react-loading-skeleton — manual parallel tree (~22 lines)
-import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+const RLS_CODE = `// react-loading-@kenildev007/skeleton — manual parallel tree (~22 lines)
+import Skeleton from 'react-loading-@kenildev007/skeleton';
+import 'react-loading-@kenildev007/skeleton/dist/@kenildev007/skeleton.css';
 
 function UserCard({ user, loading }) {
   if (loading) {
@@ -29,7 +29,7 @@ function UserCard({ user, loading }) {
 }`;
 
 const SA_CODE = `// Skeleto — wrap and forget (3 lines)
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 
 function UserCard({ user, loading }) {
   return (
@@ -60,7 +60,7 @@ export default function ComparePage() {
           onClick={() => setLoading((l) => !l)}
           className="px-4 py-2 rounded-md bg-accent-600 text-white text-sm font-medium hover:bg-accent-500"
         >
-          {loading ? 'Show real content' : 'Show skeleton'}
+          {loading ? 'Show real content' : 'Show @kenildev007/skeleton'}
         </button>
         <button
           onClick={() => {
@@ -75,15 +75,15 @@ export default function ComparePage() {
 
       <div className="grid md:grid-cols-2 gap-6">
         <Pane
-          title="react-loading-skeleton"
-          subtitle={`${RLS_LOC} lines · maintains parallel skeleton tree`}
+          title="react-loading-@kenildev007/skeleton"
+          subtitle={`${RLS_LOC} lines · maintains parallel @kenildev007/skeleton tree`}
           tone="muted"
         >
           {loading ? <FauxRLSSkeleton /> : <UserCard />}
         </Pane>
 
         <Pane
-          title="skeleto"
+          title="@kenildev007/skeleto"
           subtitle={`${SA_LOC} lines · auto-generated from real DOM`}
           tone="accent"
         >
@@ -104,13 +104,13 @@ export default function ComparePage() {
         <h2 className="text-xl font-semibold">What you save</h2>
         <ul className="mt-4 space-y-3 text-ink-700">
           <li>
-            <strong className="text-ink-900">{RLS_LOC - SA_LOC} lines per component</strong> — that's <strong>{Math.round(((RLS_LOC - SA_LOC) / RLS_LOC) * 100)}%</strong> less skeleton code per file
+            <strong className="text-ink-900">{RLS_LOC - SA_LOC} lines per component</strong> — that's <strong>{Math.round(((RLS_LOC - SA_LOC) / RLS_LOC) * 100)}%</strong> less @kenildev007/skeleton code per file
           </li>
           <li>
-            <strong className="text-ink-900">Zero drift</strong> — when the real component changes its layout, the skeleton updates automatically. With the manual approach you forget to update the skeleton tree and it goes stale.
+            <strong className="text-ink-900">Zero drift</strong> — when the real component changes its layout, the @kenildev007/skeleton updates automatically. With the manual approach you forget to update the @kenildev007/skeleton tree and it goes stale.
           </li>
           <li>
-            <strong className="text-ink-900">One API for web + RN + Expo</strong> — react-loading-skeleton is web-only; for React Native you'd install <em>react-native-skeleton-placeholder</em> separately and write yet another parallel tree.
+            <strong className="text-ink-900">One API for web + RN + Expo</strong> — react-loading-@kenildev007/skeleton is web-only; for React Native you'd install <em>react-native-@kenildev007/skeleton-placeholder</em> separately and write yet another parallel tree.
           </li>
           <li>
             <strong className="text-ink-900">A11y baked in</strong> — <code className="bg-ink-100 px-1 rounded">aria-busy</code>, <code className="bg-ink-100 px-1 rounded">aria-live</code>, <code className="bg-ink-100 px-1 rounded">prefers-reduced-motion</code>, <code className="bg-ink-100 px-1 rounded">inert</code> focus trap — handled. With the manual approach you wire each yourself.
@@ -145,7 +145,7 @@ function Pane({
 }
 
 function FauxRLSSkeleton() {
-  // Hand-authored placeholder — what you'd write with react-loading-skeleton.
+  // Hand-authored placeholder — what you'd write with react-loading-@kenildev007/skeleton.
   // Implemented as bare divs to avoid pulling the dep into the docs site.
   return (
     <div className="flex gap-4 p-1 w-full">

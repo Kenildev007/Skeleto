@@ -8,7 +8,7 @@ Expo SDK 54 + RN 0.76 + Reanimated 3.16 + new architecture, demoing every shippe
 ```bash
 # Web (verified, fast)
 pnpm export:web
-# → dist/index.html + 1.0 MB JS bundle, includes skeleton-auto code
+# → dist/index.html + 1.0 MB JS bundle, includes @kenildev007/skeleton-auto code
 
 # Web dev server
 pnpm web
@@ -64,16 +64,16 @@ config.resolver.nodeModulesPaths = [
 ];
 
 // Honor the package.json `exports` field with the react-native condition,
-// so `skeleto` resolves to its native entry instead of the web ESM build.
+// so `@kenildev007/skeleto` resolves to its native entry instead of the web ESM build.
 config.resolver.unstable_enablePackageExports = true;
 config.resolver.unstable_conditionNames = ['react-native', 'require', 'import'];
 
 // Workspace packages — point Metro at source so it picks .native.ts files.
 config.resolver.extraNodeModules = {
-  '@skeleto/core':   path.resolve(workspaceRoot, 'packages/core/src'),
-  '@skeleto/web':    path.resolve(workspaceRoot, 'packages/web/src'),
-  '@skeleto/native': path.resolve(workspaceRoot, 'packages/native/src'),
-  'skeleto':         path.resolve(workspaceRoot, 'packages/native/src'),
+  '@kenildev007/skeleto-core':   path.resolve(workspaceRoot, 'packages/core/src'),
+  '@kenildev007/skeleto-web':    path.resolve(workspaceRoot, 'packages/web/src'),
+  '@kenildev007/skeleto-native': path.resolve(workspaceRoot, 'packages/native/src'),
+  '@kenildev007/skeleto':         path.resolve(workspaceRoot, 'packages/native/src'),
 };
 ```
 
@@ -84,7 +84,7 @@ config.resolver.extraNodeModules = {
 | `Unable to resolve module ./index from /workspace-root/.` | Metro's serverRoot is the workspace root; default `index.bundle` URL resolves from there | Hit `examples/expo-app/index.bundle` (workspace-relative) instead, or override Metro's `serverRoot` |
 | `Unable to resolve module @babel/runtime from .pnpm/react-native-web/...` | RN's transitive deps live under `.pnpm/` and aren't reachable | Add `@babel/runtime` (and friends) to `.npmrc` `public-hoist-pattern` |
 | `Unable to resolve module invariant` | Same as above for `invariant`, `fbjs`, `event-target-shim`, etc. | Add each to the hoist patterns |
-| `Unable to resolve module @skeleto/native from packages/react/dist/index.native.js` | Workspace packages aren't auto-resolvable across the symlink | Add to `extraNodeModules` map in `metro.config.js` |
+| `Unable to resolve module @kenildev007/skeleto-native from packages/react/dist/index.native.js` | Workspace packages aren't auto-resolvable across the symlink | Add to `extraNodeModules` map in `metro.config.js` |
 | Bundle resolves to web entry instead of native | Metro reads `module` field by default | Enable `unstable_enablePackageExports` + `unstable_conditionNames: ['react-native', ...]` |
 
 ## What the app shows
@@ -95,4 +95,4 @@ Four scrollable demos using the production `<AutoSkeleton>` component:
 3. Stagger reveal (3 cards, `staggerChildren={80}`)
 4. `<AutoSkeleton.List>` — bypasses measurement for fixed-height rows
 
-Toggle controls: "Show real / Show skeleton" + "Simulate fetch (1.5s)".
+Toggle controls: "Show real / Show @kenildev007/skeleton" + "Simulate fetch (1.5s)".

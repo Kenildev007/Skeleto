@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { AutoSkeleton } from 'skeleto';
+import { AutoSkeleton } from '@kenildev007/skeleto';
 
 const FAKE_USER = {
   name: 'Ada Lovelace',
@@ -25,7 +25,7 @@ export default function App() {
               onPress={() => setLoading((l) => !l)}
               style={({ pressed }) => [styles.btn, pressed && styles.btnPressed]}
             >
-              <Text style={styles.btnText}>{loading ? 'Show real' : 'Show skeleton'}</Text>
+              <Text style={styles.btnText}>{loading ? 'Show real' : 'Show @kenildev007/skeleton'}</Text>
             </Pressable>
             <Pressable
               onPress={() => {

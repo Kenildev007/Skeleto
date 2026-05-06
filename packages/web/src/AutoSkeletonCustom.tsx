@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useStableLoading } from '@skeleto/core';
+import { useStableLoading } from '@kenildev007/skeleto-core';
 
 export interface AutoSkeletonCustomProps {
   loading: boolean;

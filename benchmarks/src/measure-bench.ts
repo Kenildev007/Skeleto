@@ -1,5 +1,5 @@
 import { Window } from 'happy-dom';
-import { measureTree } from '@skeleto/web';
+import { measureTree } from '@kenildev007/skeleto-web';
 
 const SIZES = [10, 50, 100, 250, 500, 1000];
 const ITERATIONS = 50;

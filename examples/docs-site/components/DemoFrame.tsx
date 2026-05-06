@@ -28,7 +28,7 @@ export function DemoFrame({ title, description, code, preview, defaultLoading = 
           onClick={() => setLoading((l) => !l)}
           className="px-3 py-1.5 rounded-md bg-accent-600 text-white text-sm font-medium hover:bg-accent-500"
         >
-          {loading ? 'Show real content' : 'Show skeleton'}
+          {loading ? 'Show real content' : 'Show @kenildev007/skeleton'}
         </button>
         <button
           onClick={() => {

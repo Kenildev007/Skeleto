@@ -9,15 +9,15 @@ Best submission window: Tue–Thu, 8–10am Pacific. Avoid Mondays (HN traffic d
 ## Title
 
 ```
-Show HN: Skeleton-auto – wrap your component, get a skeleton (web, RN, Expo)
+Show HN: Skeleton-auto – wrap your component, get a @kenildev007/skeleton (web, RN, Expo)
 ```
 
 (72 chars. HN cuts at 80. The em-dash is fine on HN.)
 
 Alternates if the first feels off:
 
-- `Show HN: Auto-generated skeleton loaders that work on web and React Native`
-- `Show HN: I stopped hand-coding skeleton loaders. One wrapper, three platforms.`
+- `Show HN: Auto-generated @kenildev007/skeleton loaders that work on web and React Native`
+- `Show HN: I stopped hand-coding @kenildev007/skeleton loaders. One wrapper, three platforms.`
 
 ---
 
@@ -32,14 +32,14 @@ Alternates if the first feels off:
 ```
 Hey HN, author here.
 
-Every skeleton library I've used makes you maintain a parallel placeholder
+Every @kenildev007/skeleton library I've used makes you maintain a parallel placeholder
 tree alongside your real component. Change a layout, forget to update the
-skeleton, ship a stale loading state. I got tired of it.
+@kenildev007/skeleton, ship a stale loading state. I got tired of it.
 
 Skeleton-auto reads your real UI at runtime, measures the leaf elements
 (getBoundingClientRect on web, measureInWindow on RN, sync shadow-node
 read on Fabric), classifies each as text/image/circle/rect/icon via a
-score-based inferer, and overlays a skeleton at the same coordinates.
+score-based inferer, and overlays a @kenildev007/skeleton at the same coordinates.
 Animation runs on the compositor (CSS @keyframes on web) or UI thread
 (Reanimated 3 worklets on native) — never on JS. One <AutoSkeleton>
 component. Same API on web, iOS, Android, and Expo Go.
@@ -58,7 +58,7 @@ The honest limitations:
   Reanimated worklets present); I haven't been able to do a full iOS
   sim run because my Xcode is 15.0 and RN 0.76 wants 15.4+.
 - The docs site has a /compare page that runs the same UserCard with
-  react-loading-skeleton vs skeleton-auto side-by-side, if you want to
+  react-loading-@kenildev007/skeleton vs @kenildev007/skeleton-auto side-by-side, if you want to
   see the difference live before installing.
 
 Genuinely happy to fix things — file an issue or reply here with the
@@ -66,14 +66,14 @@ component shape that breaks for you and I'll add it to the test suite.
 
 Repo: https://github.com/Kenildev007/Skeleto
 Docs: https://kenildev007.github.io/Skeleto
-Playground (paste any JSX, see the skeleton): https://kenildev007.github.io/Skeleto/playground
+Playground (paste any JSX, see the @kenildev007/skeleton): https://kenildev007.github.io/Skeleto/playground
 ```
 
 ---
 
 ## Why this draft is structured the way it is
 
-- **Title leads with the verb** ("wrap your component, get a skeleton") not the
+- **Title leads with the verb** ("wrap your component, get a @kenildev007/skeleton") not the
   feature list. HN scans titles in <1s.
 - **No "introducing" / "excited to share" / emojis.** HN votes those down.
 - **Real measured numbers, not "blazing fast".** The bench output is in the repo
@@ -89,12 +89,12 @@ Playground (paste any JSX, see the skeleton): https://kenildev007.github.io/Skel
 
 ## Backup answers for the questions HN will definitely ask
 
-### "How is this different from react-loading-skeleton?"
+### "How is this different from react-loading-@kenildev007/skeleton?"
 
 > RLS is a primitive — you write `<Skeleton width=… height=…/>` for every
 > placeholder. Skeleton-auto reads your DOM and generates those for you. The
 > /compare page on the docs site shows the same UserCard with both: 22 lines
-> of skeleton code with RLS, 6 lines with Skeleto. RLS is also web-only;
+> of @kenildev007/skeleton code with RLS, 6 lines with Skeleto. RLS is also web-only;
 > on RN you'd reach for a different library and a third API.
 
 ### "Won't this re-measure on every render?"
@@ -103,7 +103,7 @@ Playground (paste any JSX, see the skeleton): https://kenildev007.github.io/Skel
 > tag/size fingerprint. If nothing changed structurally, no re-measure.
 > ResizeObserver covers root resizes; we also re-measure on rAF and on
 > window 'load' to catch font/image-load layout shifts (a real bug I had
-> for two days — see the v0.4 changelog in 01-skeleton-auto.md).
+> for two days — see the v0.4 changelog in 01-@kenildev007/skeleton-auto.md).
 
 ### "What about React Server Components / Next.js streaming?"
 
@@ -130,14 +130,14 @@ Playground (paste any JSX, see the skeleton): https://kenildev007.github.io/Skel
 > Score-based, not brittle if/else. Each leaf gets weighted scores across
 > text/image/circle/rect/icon based on component type, aspect ratio, border
 > radius, text content, background image, and any explicit
-> `data-skeleton-role` override (which always wins). The full table is in
+> `data-@kenildev007/skeleton-role` override (which always wins). The full table is in
 > packages/core/src/roles.ts — easy to add new signals via PR.
 
 ---
 
 ## Things to do before submitting
 
-- [ ] Replace `skeleto.dev` with the real URLs
+- [ ] Replace `@kenildev007/skeleto.dev` with the real URLs
 - [ ] Cut a v1.0 git tag and publish to npm
 - [ ] Verify the docs site is live on Vercel and the /compare page loads
 - [ ] Verify the playground works (Babel-standalone runtime can be flaky)

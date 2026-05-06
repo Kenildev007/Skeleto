@@ -1,1 +1,1 @@
-export * from '@skeleto/native';
+export * from '@kenildev007/skeleto-native';
