@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* skeleton-auto stylesheet */
-@import 'skeleton-auto/styles.css';
+/* skeleto stylesheet */
+@import 'skeleto/styles.css';
 
 :root {
   --bg: #fafafa;
