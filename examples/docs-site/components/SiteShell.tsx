@@ -51,7 +51,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="border-b border-ink-200 bg-white sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="font-semibold text-lg tracking-tight">
-            <span className="text-accent-600">skeleton</span>-auto
+            <span className="text-accent-600">Skeleto</span>
           </Link>
           <nav className="flex gap-6 text-sm items-center">
             <Link href="/docs/getting-started">Docs</Link>
