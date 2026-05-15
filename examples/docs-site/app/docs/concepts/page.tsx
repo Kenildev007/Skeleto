@@ -21,7 +21,7 @@ export default function Page() {
           a score-based role inferer.
         </li>
         <li>
-          <strong>Overlay & animate.</strong> A @kenildev007/skeleton layer is rendered above the children
+          <strong>Overlay & animate.</strong> A skeleton layer is rendered above the children
           at the exact measured coordinates. Animation runs on the compositor (CSS keyframes
           on web) or the UI thread (Reanimated 3 on native) — never on JS.
         </li>
@@ -42,7 +42,7 @@ export default function Page() {
         Signals include: component type (Text vs Image vs View), aspect ratio,
         border radius, presence of text content, presence of background image,
         and an explicit
-        <code className="bg-ink-100 px-1 rounded"> data-@kenildev007/skeleton-role</code> attribute that always wins.
+        <code className="bg-ink-100 px-1 rounded"> data-skeleton-role</code> attribute that always wins.
       </p>
       <p className="text-ink-700 leading-relaxed">
         This is extensible — new signals are just additions to one scoring table.

@@ -23,11 +23,11 @@ export default function Home() {
               v0.1 — React, React Native, Expo
             </div>
             <h1 className="text-5xl md:text-6xl font-semibold tracking-tight mt-6 leading-[1.05]">
-              The last @kenildev007/skeleton loader you'll install.
+              The last skeleton loader you'll install.
             </h1>
             <p className="text-lg text-ink-500 mt-6 leading-relaxed">
               <code className="text-ink-900 bg-ink-100 px-1.5 py-0.5 rounded">@kenildev007/skeleto</code> reads
-              your real UI and generates pixel-matching @kenildev007/skeletons on the fly. One component. Web,
+              your real UI and generates pixel-matching skeletons on the fly. One component. Web,
               iOS, Android, Expo. 60 FPS. Zero config.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -57,7 +57,7 @@ export default function Home() {
               <UserCard />
             </AutoSkeleton>
             <div className="text-xs text-ink-500 mt-4">
-              ↑ This @kenildev007/skeleton is generated from the actual UserCard's DOM.
+              ↑ This skeleton is generated from the actual UserCard's DOM.
               No fixture file. No CLI. We just measure.
             </div>
           </div>

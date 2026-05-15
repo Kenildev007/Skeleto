@@ -5,14 +5,14 @@ export default function Page() {
     <article className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight">Migration guide</h1>
       <p className="text-ink-700 leading-relaxed">
-        From hand-authored @kenildev007/skeleton libraries to <code className="bg-ink-100 px-1 rounded">@kenildev007/skeleto</code>.
+        From hand-authored skeleton libraries to <code className="bg-ink-100 px-1 rounded">@kenildev007/skeleto</code>.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8">From react-loading-@kenildev007/skeleton</h2>
+      <h2 className="text-xl font-semibold mt-8">From react-loading-skeleton</h2>
       <p className="text-ink-700 mb-3">Before:</p>
       <CodeBlock
-        code={`import Skeleton from 'react-loading-@kenildev007/skeleton';
-import 'react-loading-@kenildev007/skeleton/dist/@kenildev007/skeleton.css';
+        code={`import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function UserCard({ user, loading }) {
   if (loading) {
@@ -41,15 +41,15 @@ function UserCard({ user, loading }) {
 }`}
       />
       <p className="text-ink-700">
-        That's the whole migration. You delete the parallel @kenildev007/skeleton tree and let the library
+        That's the whole migration. You delete the parallel skeleton tree and let the library
         infer it. If a specific shape is wrong, use the
-        <code className="bg-ink-100 px-1 rounded"> data-@kenildev007/skeleton-role</code> escape hatch.
+        <code className="bg-ink-100 px-1 rounded"> data-skeleton-role</code> escape hatch.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8">From react-native-@kenildev007/skeleton-placeholder</h2>
+      <h2 className="text-xl font-semibold mt-8">From react-native-skeleton-placeholder</h2>
       <p className="text-ink-700 mb-3">Before:</p>
       <CodeBlock
-        code={`import SkeletonPlaceholder from 'react-native-@kenildev007/skeleton-placeholder';
+        code={`import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 
 function UserCard({ user, loading }) {
   if (loading) {
@@ -86,7 +86,7 @@ function UserCard({ user, loading }) {
         <table className="w-full min-w-[520px] text-sm">
           <thead className="bg-ink-100">
             <tr>
-              <th className="text-left p-3">react-loading-@kenildev007/skeleton</th>
+              <th className="text-left p-3">react-loading-skeleton</th>
               <th className="text-left p-3">Skeleto</th>
             </tr>
           </thead>
@@ -94,7 +94,7 @@ function UserCard({ user, loading }) {
             <Row a="baseColor" b="baseColor (or via SkeletonProvider)" />
             <Row a="highlightColor" b="highlightColor" />
             <Row a="duration" b="speed (seconds)" />
-            <Row a="circle" b="auto-detected; or data-@kenildev007/skeleton-role='circle'" />
+            <Row a="circle" b="auto-detected; or data-skeleton-role='circle'" />
             <Row a="count" b="just render N children - they're auto-measured" />
             <Row a="enableAnimation={false}" b="animation='none'" />
           </tbody>

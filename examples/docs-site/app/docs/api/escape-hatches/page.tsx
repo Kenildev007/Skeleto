@@ -15,29 +15,29 @@ export default function Page() {
 
       <h2 id="role" className="text-xl font-semibold mt-8">Force a role</h2>
       <p className="text-ink-700">
-        Pass <code className="bg-ink-100 px-1 rounded">data-@kenildev007/skeleton-role</code> on web,
-        or <code className="bg-ink-100 px-1 rounded">@kenildev007/skeletonRole</code> on RN, to override inference.
+        Pass <code className="bg-ink-100 px-1 rounded">data-skeleton-role</code> on web,
+        or <code className="bg-ink-100 px-1 rounded">skeletonRole</code> on RN, to override inference.
       </p>
       <CodeBlock
         code={`// web
-<div data-@kenildev007/skeleton-role="image" />
+<div data-skeleton-role="image" />
 
 // React Native
-<View @kenildev007/skeletonRole="image" />`}
+<View skeletonRole="image" />`}
       />
       <RoleDemo />
 
       <h2 id="ignore" className="text-xl font-semibold mt-12">Ignore a subtree</h2>
       <p className="text-ink-700">
-        Wrap any subtree that shouldn't be @kenildev007/skeletonized — error banners, sticky toolbars, etc.
+        Wrap any subtree that shouldn't be skeletonized — error banners, sticky toolbars, etc.
       </p>
       <CodeBlock
-        code={`<div data-@kenildev007/skeleton-ignore>
+        code={`<div data-skeleton-ignore>
   <ErrorBanner />
 </div>
 
 // React Native
-<View @kenildev007/skeletonIgnore>
+<View skeletonIgnore>
   <ErrorBanner />
 </View>`}
       />
@@ -45,7 +45,7 @@ export default function Page() {
 
       <h2 id="custom" className="text-xl font-semibold mt-12">&lt;AutoSkeleton.Custom&gt;</h2>
       <p className="text-ink-700">
-        Replace a single subtree with a hand-crafted @kenildev007/skeleton. Useful for charts, maps,
+        Replace a single subtree with a hand-crafted skeleton. Useful for charts, maps,
         videos — anything the measurement engine can't introspect meaningfully.
       </p>
       <CodeBlock
@@ -73,8 +73,8 @@ function RoleDemo() {
       <div className="p-5">
         <AutoSkeleton loading={loading}>
           <div className="flex gap-3">
-            <div data-@kenildev007/skeleton-role="circle" className="w-12 h-12 rounded-full bg-ink-200" />
-            <div data-@kenildev007/skeleton-role="image" className="flex-1 h-20 rounded-lg bg-ink-200" />
+            <div data-skeleton-role="circle" className="w-12 h-12 rounded-full bg-ink-200" />
+            <div data-skeleton-role="image" className="flex-1 h-20 rounded-lg bg-ink-200" />
           </div>
         </AutoSkeleton>
       </div>
@@ -94,8 +94,8 @@ function IgnoreDemo() {
       <div className="p-5">
         <AutoSkeleton loading={loading}>
           <div className="flex flex-col gap-3">
-            <div data-@kenildev007/skeleton-ignore className="px-3 py-2 rounded bg-amber-100 text-amber-700 text-sm">
-              ⚠ This banner is always visible — wrapped in data-@kenildev007/skeleton-ignore
+            <div data-skeleton-ignore className="px-3 py-2 rounded bg-amber-100 text-amber-700 text-sm">
+              ⚠ This banner is always visible — wrapped in data-skeleton-ignore
             </div>
             <div className="flex gap-3 p-3 bg-white border border-ink-200 rounded-lg">
               <div className="w-12 h-12 rounded-full bg-ink-200" />

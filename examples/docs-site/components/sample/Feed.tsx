@@ -1,6 +1,6 @@
 const POSTS = [
   { author: 'Grace Hopper', text: 'Just shipped a new feature using Skeleto. Wild.', img: true },
-  { author: 'Alan Turing', text: 'The whole point of a @kenildev007/skeleton loader is to communicate shape, not detail.', img: false },
+  { author: 'Alan Turing', text: 'The whole point of a skeleton loader is to communicate shape, not detail.', img: false },
   { author: 'Margaret Hamilton', text: 'Loaded my new feed in 12ms. Skeleton barely had time to flash.', img: true },
 ];
 

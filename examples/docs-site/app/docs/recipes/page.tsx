@@ -13,7 +13,7 @@ export default function Page() {
       <h1 className="text-3xl font-semibold tracking-tight">Recipes</h1>
       <p className="text-ink-700 leading-relaxed">
         Real-world component patterns. Each shows the source component and the auto-generated
-        @kenildev007/skeleton — same DOM, no duplication.
+        skeleton — same DOM, no duplication.
       </p>
 
       <section id="profile">

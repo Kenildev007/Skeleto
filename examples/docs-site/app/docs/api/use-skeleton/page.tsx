@@ -9,7 +9,7 @@ export default function Page() {
     <article className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight">useSkeleton()</h1>
       <p className="text-ink-700 leading-relaxed">
-        For when you want to render a custom @kenildev007/skeleton — not the auto-measured one — but still
+        For when you want to render a custom skeleton — not the auto-measured one — but still
         want the lifecycle helpers: stable loading state with <code className="bg-ink-100 px-1 rounded">minDuration</code>,
         a11y bindings, etc.
       </p>
@@ -60,7 +60,7 @@ function Demo() {
           </div>
         ) : (
           <div>
-            <h3 className="font-semibold">Hand-crafted @kenildev007/skeleton</h3>
+            <h3 className="font-semibold">Hand-crafted skeleton</h3>
             <p className="text-ink-700">When you need full control over the placeholder shape.</p>
           </div>
         )}

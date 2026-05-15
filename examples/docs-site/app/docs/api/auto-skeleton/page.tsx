@@ -35,7 +35,7 @@ export default function Page() {
   // Behavior
   transition?: number;               // ms fade, default 200
   staggerChildren?: number;          // ms between child reveals, default 0
-  minDuration?: number;              // ms minimum @kenildev007/skeleton display, default 0
+  minDuration?: number;              // ms minimum skeleton display, default 0
 
   // Advanced
   preserveLayout?: boolean;          // default true
@@ -71,9 +71,9 @@ export default function Page() {
 
       <h2 id="min-duration" className="text-xl font-semibold mt-12">minDuration</h2>
       <p className="text-ink-700">
-        Prevents @kenildev007/skeleton flicker. If your data resolves in 50ms, the @kenildev007/skeleton would otherwise
+        Prevents skeleton flicker. If your data resolves in 50ms, the skeleton would otherwise
         flash for one frame and disappear — looking like a glitch. Set
-        <code className="bg-ink-100 px-1 rounded"> minDuration={`{400}`}</code> and the @kenildev007/skeleton
+        <code className="bg-ink-100 px-1 rounded"> minDuration={`{400}`}</code> and the skeleton
         is held visible for at least 400ms regardless of how fast the network responds.
       </p>
       <MinDurationDemo />

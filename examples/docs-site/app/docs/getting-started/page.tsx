@@ -11,7 +11,7 @@ export default function Page() {
       <h1 className="text-3xl font-semibold tracking-tight">Getting started</h1>
       <p className="text-ink-700 leading-relaxed">
         Sixty seconds from <code className="bg-ink-100 px-1 rounded">npm install</code> to a
-        working @kenildev007/skeleton.
+        working skeleton.
       </p>
 
       <h2 className="text-xl font-semibold mt-8">1. Install</h2>
@@ -37,7 +37,7 @@ function UserProfile({ userId }) {
 
       <h2 className="text-xl font-semibold mt-8">That's it</h2>
       <p className="text-ink-700">
-        No fixtures. No CLI. No build step. Try it live below — the @kenildev007/skeleton is generated from
+        No fixtures. No CLI. No build step. Try it live below — the skeleton is generated from
         the same UserCard DOM that's used when loaded.
       </p>
 
